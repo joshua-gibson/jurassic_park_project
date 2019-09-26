@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.codeclan.jurassicpark</groupId>
-	<artifactId>jurassicpark</artifactId>
+	<artifactId>back_end</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>jurassicpark</name>
+	<name>back_end</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
