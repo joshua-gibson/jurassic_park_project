@@ -2,6 +2,7 @@ package com.codeclan.jurassicpark.back_end.models;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -27,15 +28,30 @@ public class Paddock {
     @OneToMany(mappedBy = "paddock", fetch = FetchType.LAZY)
     private List<Dinosaur> dinosaurs;
 
-    public Paddock(String name, int visitorCapacity, int dinosaurCapacity) {
+    @JsonIgnoreProperties("paddock")
+    @ManyToOne
+    @JoinColumn(name="park_id", nullable=false)
+    private Park park;
+
+
+    public Paddock(String name, int visitorCapacity, int dinosaurCapacity, Park park) {
         this.name = name;
         this.visitorCapacity = visitorCapacity;
         this.dinosaurCapacity = dinosaurCapacity;
         this.dinosaurs = new ArrayList<>();
+        this.park = park;
 
     }
 
     public Paddock() {
+    }
+
+    public Park getPark() {
+        return park;
+    }
+
+    public void setPark(Park park) {
+        this.park = park;
     }
 
     public Long getId() {

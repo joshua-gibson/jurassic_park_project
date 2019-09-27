@@ -2,6 +2,7 @@ package com.codeclan.jurassicpark.back_end.models;
 
 import com.codeclan.jurassicpark.back_end.enums.Species;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
@@ -20,7 +21,7 @@ public class Dinosaur {
     @Enumerated(value = EnumType.STRING)
     private Species species;
 
-    @JsonIgnore
+    @JsonIgnoreProperties("dinosaur")
     @ManyToOne
     @JoinColumn(name="paddock_id", nullable= false)
     private Paddock paddock;
