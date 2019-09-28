@@ -1,14 +1,12 @@
 package com.codeclan.jurassicpark.back_end.models;
 
-import com.codeclan.jurassicpark.back_end.enums.Species;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "dinosaurs")
-public class Dinosaur {
+public abstract class Dinosaur {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,19 +15,14 @@ public class Dinosaur {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "species")
-    @Enumerated(value = EnumType.STRING)
-    private Species species;
-
     @JsonIgnoreProperties("dinosaur")
     @ManyToOne
     @JoinColumn(name="paddock_id", nullable= false)
     private Paddock paddock;
 
 
-    public Dinosaur(String name, Species species, Paddock paddock) {
+    public Dinosaur(String name, Paddock paddock) {
         this.name = name;
-        this.species = species;
         this.paddock = paddock;
     }
 
@@ -58,13 +51,5 @@ public class Dinosaur {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Species getSpecies() {
-        return species;
-    }
-
-    public void setSpecies(Species species) {
-        this.species = species;
     }
 }
