@@ -3,9 +3,11 @@ package com.codeclan.jurassicpark.back_end.models;
 import com.codeclan.jurassicpark.back_end.enums.ECarnivore;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
+@Entity
 public class Carnivore extends Dinosaur {
 
     @Column(name = "species")
@@ -17,11 +19,11 @@ public class Carnivore extends Dinosaur {
         this.eCarnivore = eCarnivore;
     }
 
-    public ECarnivore getCarnivore() {
+    public ECarnivore geteCarnivore() {
         return eCarnivore;
     }
 
-    public void setCarnivore(ECarnivore carnivore) {
+    public void seteCarnivore(ECarnivore eCarnivore) {
         this.eCarnivore = eCarnivore;
     }
 }

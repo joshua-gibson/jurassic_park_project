@@ -26,7 +26,12 @@ public abstract class Dinosaur {
         this.paddock = paddock;
     }
 
-    public Dinosaur() {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Paddock getPaddock() {
@@ -35,14 +40,6 @@ public abstract class Dinosaur {
 
     public void setPaddock(Paddock paddock) {
         this.paddock = paddock;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {
