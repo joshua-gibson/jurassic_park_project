@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import HeaderContainer from './HeaderContainer';
 import PageTitleBar from '../components/PageTitleBar'
+import PaddockFilterForm from '../components/PaddockFilterForm'
+import DinoCardList from '../components/DinoCardList'
 
 class ManageDinosContainer extends Component {
 
@@ -16,6 +17,8 @@ class ManageDinosContainer extends Component {
             <>
                 <PageTitleBar title={this.state.title}/>
                 <h1>Manage Dinosaurs Container</h1>
+                <PaddockFilterForm/>
+                <DinoCardList/>
 
             </>
         )
