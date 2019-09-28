@@ -2,10 +2,9 @@ package com.codeclan.jurassicpark.back_end.components;
 
 
 import com.codeclan.jurassicpark.back_end.enums.ECarnivore;
-import com.codeclan.jurassicpark.back_end.models.Carnivore;
-import com.codeclan.jurassicpark.back_end.models.Dinosaur;
-import com.codeclan.jurassicpark.back_end.models.Paddock;
-import com.codeclan.jurassicpark.back_end.models.Park;
+import com.codeclan.jurassicpark.back_end.enums.EHerbivore;
+import com.codeclan.jurassicpark.back_end.enums.EOmnivore;
+import com.codeclan.jurassicpark.back_end.models.*;
 import com.codeclan.jurassicpark.back_end.repositories.DinosaurRepository.DinosaurRepository;
 import com.codeclan.jurassicpark.back_end.repositories.PaddockRepository.PaddockRepository;
 import com.codeclan.jurassicpark.back_end.repositories.ParkRepository.ParkRepository;
@@ -37,8 +36,14 @@ public class DataLoader implements ApplicationRunner {
         Paddock paddock1 = new Paddock("paddock1", 1, 2, jurassicPark);
         paddockRepository.save(paddock1);
 
-        Carnivore dino1 = new Carnivore("Dave", paddock1, ECarnivore.INDOSUCHUS);
-        dinosaurRepository.save(dino1);
+        Carnivore carn1 = new Carnivore("Carl", paddock1, ECarnivore.INDOSUCHUS);
+        dinosaurRepository.save(carn1);
+
+        Herbivore herb1 = new Herbivore("Harry", paddock1, EHerbivore.APATOSAURUS);
+        dinosaurRepository.save(herb1);
+
+        Omnivore omni1 = new Omnivore("Olly", paddock1, EOmnivore.KHAAN);
+        dinosaurRepository.save(omni1);
 
 
     }

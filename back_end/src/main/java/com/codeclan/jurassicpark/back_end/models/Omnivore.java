@@ -3,9 +3,11 @@ package com.codeclan.jurassicpark.back_end.models;
 import com.codeclan.jurassicpark.back_end.enums.EOmnivore;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
+@Entity
 public class Omnivore extends Dinosaur {
 
     @Column(name = "species")
