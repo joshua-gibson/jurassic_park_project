@@ -1,10 +1,11 @@
 import React from 'react';
+import '../style/HeaderContainer.css'
 
 const BannerLogo = (props) => {
 
   return (
     <>
-       <h1>Banner Logo</h1>
+       <p className="title">Jurassic Park Manager</p>
     </>
   );
 
