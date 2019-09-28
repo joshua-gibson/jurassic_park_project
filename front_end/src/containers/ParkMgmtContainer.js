@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import HeaderContainer from './HeaderContainer';
 import PageTitleBar from '../components/PageTitleBar'
 import ParkMap from '../components/ParkMap'
 import AddVisitorForm from '../components/AddVisitorForm'

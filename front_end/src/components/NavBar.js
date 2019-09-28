@@ -1,14 +1,18 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const NavBar = (props) => {
 
   return (
     <>
     <ul>
-       <li>Nav Item 1</li>
-       <li>Nav Item 2</li>
-       <li>Nav Item 3</li>
-       <li>Nav Item 4</li>
+      <li>
+          <Link to="/">Park Management</Link>
+      </li>
+      <li>
+          <Link to="/dinos">Manage dinosaurs</Link>
+      </li>
+        
     </ul>
     </>
   );
