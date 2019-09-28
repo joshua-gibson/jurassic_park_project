@@ -30,25 +30,25 @@ public class Park {
 
     @JsonIgnore
     @OneToMany(mappedBy = "park", fetch = FetchType.LAZY)
-    private List<Paddock> paddock;
+    private List<Paddock> paddocks;
 
     public Park(String name, int capacity, Boolean lockdown, int paddockCapacity) {
         this.name = name;
         this.capacity = capacity;
         this.lockdown = lockdown;
         this.paddockCapacity = paddockCapacity;
-        this.paddock = new ArrayList<>();
+        this.paddocks = new ArrayList<>();
     }
 
     public Park() {
     }
 
     public List<Paddock> getPaddock() {
-        return paddock;
+        return paddocks;
     }
 
     public void setPaddock(List<Paddock> paddock) {
-        this.paddock = paddock;
+        this.paddocks = paddock;
     }
 
     public Long getId() {
@@ -89,5 +89,13 @@ public class Park {
 
     public void setPaddockCapacity(int paddockCapacity) {
         this.paddockCapacity = paddockCapacity;
+    }
+
+    public int getPaddocksCount() {
+        return this.paddocks.size();
+    }
+
+    public void addPaddock(Paddock paddock) {
+        this.paddocks.add(paddock);
     }
 }
