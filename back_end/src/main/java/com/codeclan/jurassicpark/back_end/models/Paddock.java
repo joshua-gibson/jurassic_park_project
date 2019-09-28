@@ -93,4 +93,12 @@ public class Paddock {
     public void setDinosaurs(List<Dinosaur> dinosaurs) {
         this.dinosaurs = dinosaurs;
     }
+
+    public int getDinosaurCount() {
+        return this.dinosaurs.size();
+    }
+
+    public void addDinosaurs(Dinosaur dinosaur){
+        this.dinosaurs.add(dinosaur);
+    }
 }
