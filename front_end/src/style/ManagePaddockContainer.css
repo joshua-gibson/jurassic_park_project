@@ -1,14 +1,9 @@
-@font-face {
-    font-family: "jPark";
-    src: url('../style/fonts/jPark.ttf') format('truetype');
-    
-  }
-
-  .container {
+.container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
+    align-items: center;
+    /* justify-content: center; */
+
   }
 
 .title {

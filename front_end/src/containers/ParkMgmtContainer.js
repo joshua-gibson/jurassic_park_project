@@ -3,6 +3,8 @@ import PageTitleBar from '../components/PageTitleBar'
 import ParkMap from '../components/ParkMap'
 import AddVisitorForm from '../components/AddVisitorForm'
 import LockdownButton from '../components/LockdownButton'
+import '../style/ParkMgmtContainer.css';
+
 
 class ParkMgmtContainer extends Component {
 
@@ -24,13 +26,12 @@ class ParkMgmtContainer extends Component {
 
     render() {
         return (
-            <>
-                <PageTitleBar title={this.state.title}/>
-                <h1>Park Management Container</h1>
+            <div className="container">
+                <PageTitleBar className="title" title={this.state.title}/>
                 <ParkMap/>
                 <AddVisitorForm handleNewVisitors={this.handleNewVisitors}/>
                 <LockdownButton/>
-            </>
+            </div>
         )
     }
 }

@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "jroar";
+    src: url('../style/fonts/Jungle Roar Bold.ttf') format('truetype');
+    
+  }
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+.navbaritem{
+    font-family: "jroar", serif;
+    font-size: 30px;
+    margin-right: 20px;
+    padding-right: 20px;
+    height: 30px;
+    padding: 5px;
+    list-style-type: none;
+    border:2px solid;
+    border-color: black;        /* Green */
+}
+
+a:link {
+    color: black;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: black;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: green;
+    text-decoration: none;
+  }
+  
+  a:active {
+    color: black;
+    text-decoration: none;
+  }

@@ -1,11 +1,16 @@
 import React from 'react';
+import '../style/LockdownButton.css'
 
 const LockdownButton = () => {
 
   return (
-    <>
-       <h1>LockdownButton placeholder</h1>
-    </>
+    <div className="lbcontainer">
+       <h1>Enter Lockdown: </h1>
+        <label className="switch">
+          <input type="checkbox"/>
+          <span className="slider round"></span>
+        </label>
+    </div>
   );
 
   }

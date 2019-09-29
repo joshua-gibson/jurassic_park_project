@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PageTitleBar from '../components/PageTitleBar'
+import '../style/ManagePaddockContainer.css';
 
 class ManagePaddockContainer extends Component {
 
@@ -12,11 +13,11 @@ class ManagePaddockContainer extends Component {
 
     render() {
         return (
-            <>
-                <PageTitleBar title={this.state.title}/>
+            <div className="container">
+                <PageTitleBar className="title" title={this.state.title}/>
                 <h1>Manage Paddock Container</h1>
 
-            </>
+            </div>
         )
     }
 }
