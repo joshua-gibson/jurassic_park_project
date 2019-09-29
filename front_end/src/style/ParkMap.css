@@ -3,20 +3,36 @@
     align-self: center;
     padding: 5px;
     max-width: 100%;
-    border: 1px solid #ddd;
+    border: 5px solid #ddd;
     position: relative;
         z-index: -1;
-}
-
-.lockdown {
-    border: 5px solid red;
 }
 
 .maparea {
     display: flex;
     flex-direction: column;
     position: relative;
+    border: 5px solid rgba(0, 255, 0, 0);
 }
+
+.lockdown {
+    border: 5px solid red;
+    animation-name: ldflash;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes ldflash {
+    0% {
+      border-color: white;
+    }
+    50% {
+        border-color: red;
+    }
+    100% {
+        border-color: white;
+    }
+  }
 
 .paddock {
     border: 5px solid rgba(0, 255, 0, 0.8);
