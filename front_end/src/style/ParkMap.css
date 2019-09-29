@@ -15,39 +15,62 @@
 }
 
 .paddock {
-    border: 5px solid black;
+    border: 5px solid rgba(0, 255, 0, 0.8);
+    color: rgba(0, 255, 0, 0);
     border-radius: 10px;
     margin: 0;
+    position: absolute;
 }
+
+.paddock:hover {
+    background-color: rgba(0, 255, 0, 0.3);
+  }
 
 .p1 {
     width: 50px;
     height: 50px;
-    position: absolute;
-        top: 200px; 
-        left: 550px;
+    top: 200px; 
+    left: 550px;
 }
 
 .p2 {
     width: 50px;
     height: 50px;
-    position: absolute;
-        top: 300px; 
-        left: 400px;
+    top: 300px; 
+    left: 400px;
 }
 
 .p3 {
     width: 50px;
     height: 50px;
-    position: absolute;
-        top: 400px; 
-        left: 150px;
+    top: 400px; 
+    left: 150px;
 }
 
 .p4 {
     width: 50px;
     height: 50px;
-    position: absolute;
-        top: 600px; 
-        left: 350px;
+    top: 600px; 
+    left: 350px;
 }
+
+  
+  /* Tooltip text */
+  .paddock .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: darkgreen;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .paddock:hover .tooltiptext {
+    visibility: visible;
+  }
