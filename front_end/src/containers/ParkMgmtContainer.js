@@ -20,8 +20,9 @@ class ParkMgmtContainer extends Component {
     }
 
     handleNewVisitors(newVisitors){
-      const visitors = this.state.visitors += newVisitors;
-      this.setState({visitors: visitors});
+      let currentVistors = this.state.visitors;
+      let newVisitorTotal = currentVistors += parseInt(newVisitors);
+      this.setState({visitors: newVisitorTotal});
     }
 
     render() {
@@ -29,7 +30,7 @@ class ParkMgmtContainer extends Component {
             <div className="container">
                 <PageTitleBar className="title" title={this.state.title}/>
                 <ParkMap/>
-                <AddVisitorForm handleNewVisitors={this.handleNewVisitors}/>
+                <AddVisitorForm currentvisitors={this.state.visitors} handleNewVisitors={this.handleNewVisitors}/>
                 <LockdownButton/>
             </div>
         )
