@@ -4,7 +4,8 @@ const ParkMap = () => {
 
   return (
     <>
-       <h1>Park Map Placeholder</h1>
+       <h1>Park Map</h1>
+       <img className="parkmap" src='./images/ParkBackground.png' alt="Park Landscape"></img>
     </>
   );
 
