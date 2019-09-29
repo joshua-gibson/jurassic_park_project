@@ -9,8 +9,17 @@ class ParkMgmtContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: "Park Management"
+            title: "Park Management",
+            visitors: 0
         };
+
+        this.handleNewVisitors = this.handleNewVisitors.bind(this);
+
+    }
+
+    handleNewVisitors(newVisitors){
+      const visitors = this.state.visitors += newVisitors;
+      this.setState({visitors: visitors});
     }
 
     render() {
@@ -19,7 +28,7 @@ class ParkMgmtContainer extends Component {
                 <PageTitleBar title={this.state.title}/>
                 <h1>Park Management Container</h1>
                 <ParkMap/>
-                <AddVisitorForm/>
+                <AddVisitorForm handleNewVisitors={this.handleNewVisitors}/>
                 <LockdownButton/>
             </>
         )
