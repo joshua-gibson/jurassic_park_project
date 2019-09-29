@@ -28,7 +28,8 @@ class AddVisitorForm extends Component {
 render(){
   return (
     <div>
-       <h1>AddVisitorForm</h1>
+        <h2>Visitors currently in Park: {this.props.visitors}</h2>
+       <h3>Add Visitors</h3>
        <form onSubmit={this.handleSubmit}>
        <label htmlFor="visitors">No Of Visitors</label>
        <input id="visitors"
