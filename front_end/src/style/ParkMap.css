@@ -8,6 +8,10 @@
         z-index: -1;
 }
 
+.lockdown {
+    border: 5px solid red;
+}
+
 .maparea {
     display: flex;
     flex-direction: column;

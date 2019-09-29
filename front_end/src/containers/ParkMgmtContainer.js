@@ -25,7 +25,7 @@ class ParkMgmtContainer extends Component {
         return (
             <div className="container">
                 <PageTitleBar className="title" title={this.state.title}/>
-                <ParkMap/>
+                <ParkMap lockdown={this.state.lockdown}/>
                 <AddVisitorForm/>
                 <LockdownButton onChange={this.handleLockdown}/>
             </div>
