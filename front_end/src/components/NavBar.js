@@ -7,6 +7,7 @@ const NavBar = (props) => {
   return (
     <>
     <ul className="navbar">
+
       <li className="navbaritem">
           <Link to="/">Park Management</Link>
       </li>
