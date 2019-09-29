@@ -11,8 +11,14 @@ class ParkMgmtContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: "Park Management"
+            title: "Park Management",
+            lockdown: false
         };
+        this.handleLockdown = this.handleLockdown.bind(this);
+    }
+
+    handleLockdown(ld) {
+        this.setState({lockdown: ld});
     }
 
     render() {
@@ -21,7 +27,7 @@ class ParkMgmtContainer extends Component {
                 <PageTitleBar className="title" title={this.state.title}/>
                 <ParkMap/>
                 <AddVisitorForm/>
-                <LockdownButton/>
+                <LockdownButton onChange={this.handleLockdown}/>
             </div>
         )
     }
