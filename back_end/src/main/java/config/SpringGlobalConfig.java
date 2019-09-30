@@ -3,6 +3,7 @@ package config;
 import com.codeclan.jurassicpark.back_end.models.Dinosaur;
 import com.codeclan.jurassicpark.back_end.models.Paddock;
 import com.codeclan.jurassicpark.back_end.models.Park;
+import com.codeclan.jurassicpark.back_end.models.Species;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -19,7 +20,7 @@ public class SpringGlobalConfig implements RepositoryRestConfigurer, WebMvcConfi
 
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
-        config.exposeIdsFor(Park.class, Paddock.class, Dinosaur.class);
+        config.exposeIdsFor(Park.class, Paddock.class, Dinosaur.class, Species.class);
         config.getCorsRegistry()
                 .addMapping(CORS_BASE_PATTERN)
                 .allowedOrigins(ALLOWED_ORIGINS)
