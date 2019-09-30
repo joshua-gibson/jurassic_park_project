@@ -23,7 +23,7 @@ public class DinosaurTest {
 
     @Before
     public void before(){
-        park = new Park("Jurassic Park", 500, false, 5);
+        park = new Park("Jurassic Park", 500, 5);
         paddock = new Paddock("East Paddock", 50, 5, park);
         omnivore = new Dinosaur("Alex", paddock, speciesRepository.findAll().get(0));
     }
