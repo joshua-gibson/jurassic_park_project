@@ -22,7 +22,7 @@ public class Park {
     private int capacity;
 
     @Column(name="park_paddock_capacity")
-    private int parkPaddockCapacity = 2;
+    private int parkPaddockCapacity = 3;
 
     @JsonIgnore
     @OneToMany(mappedBy = "park", fetch = FetchType.LAZY)
@@ -70,7 +70,7 @@ public class Park {
     }
 
 
-    public int getParkPaddockCapacity() {
+    public int parkPaddockCapacity() {
         return parkPaddockCapacity;
     }
 
@@ -78,12 +78,12 @@ public class Park {
         this.parkPaddockCapacity = parkPaddockCapacity;
     }
 
-    public int getPaddocksCount() {
+    public int paddocksCount() {
         return this.paddocks.size();
     }
 
     public void addPaddock(Paddock paddock) {
-        if (parkPaddockCapacity > getPaddocksCount()){
+        if (parkPaddockCapacity > paddocksCount()){
             this.paddocks.add(paddock);
         }
     }

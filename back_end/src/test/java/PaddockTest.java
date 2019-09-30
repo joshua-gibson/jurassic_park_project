@@ -56,14 +56,14 @@ public class PaddockTest {
     @Test
     public void canAddDinosaurTrue(){
         paddock.addDinosaurToPaddock(herbivore);
-        assertEquals(1, paddock.getDinosaurCount());
+        assertEquals(1, paddock.dinosaurCount());
     }
 
     @Test
     public void canAddDinosaurFalse(){
         paddock.addDinosaurToPaddock(herbivore);
         paddock.addDinosaurToPaddock(herbivore2);
-        assertEquals(1, paddock.getDinosaurCount());
+        assertEquals(1, paddock.dinosaurCount());
     }
 
     @Test
@@ -71,7 +71,7 @@ public class PaddockTest {
         paddock2.addDinosaurToPaddock(herbivore);
         paddock2.addDinosaurToPaddock(herbivore2);
         paddock2.removeDinosaurFromPaddock(herbivore);
-        assertEquals(1, paddock2.getDinosaurCount());
+        assertEquals(1, paddock2.dinosaurCount());
     }
 
 

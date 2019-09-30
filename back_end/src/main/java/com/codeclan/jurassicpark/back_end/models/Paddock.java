@@ -94,12 +94,12 @@ public class Paddock {
         this.dinosaurs = dinosaurs;
     }
 
-    public int getDinosaurCount() {
+    public int dinosaurCount() {
         return this.dinosaurs.size();
     }
 
     public void addDinosaurToPaddock(Dinosaur dinosaur){
-        if (getDinosaurCount()< this.dinosaurCapacity){
+        if (dinosaurCount()< this.dinosaurCapacity){
         this.dinosaurs.add(dinosaur);}
     }
 

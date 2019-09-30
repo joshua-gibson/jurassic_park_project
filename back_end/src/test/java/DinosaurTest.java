@@ -18,6 +18,8 @@ public class DinosaurTest {
 
     Park park;
     Paddock paddock;
+    Paddock paddock2;
+
     Dinosaur omnivore;
 
 
@@ -25,6 +27,7 @@ public class DinosaurTest {
     public void before(){
         park = new Park("Jurassic Park", 500);
         paddock = new Paddock("East Paddock", 50, 5, park);
+        paddock2 = new Paddock("West Paddock", 50, 5, park);
         omnivore = new Dinosaur("Alex", paddock, speciesRepository.findAll().get(0));
     }
 
@@ -38,4 +41,13 @@ public class DinosaurTest {
     public void hasPaddock(){
         assertEquals(paddock, omnivore.getPaddock());
     }
+
+//    @Test
+//    public void canChangePaddock(){
+//        paddock.addDinosaurToPaddock(omnivore);
+//        omnivore.movePaddock(paddock2);
+//        assertEquals("Alex", paddock2());
+//    }
+
+
 }

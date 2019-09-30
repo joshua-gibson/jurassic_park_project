@@ -22,6 +22,13 @@ public class ParkTest {
 
     }
 
+    @Test
+    public void canGetAllPaddocks(){
+        park.addPaddock(paddock);
+        park.addPaddock(paddock2);
+        park.addPaddock(paddock3);
+        assertEquals(3, park.getPaddock().size());
+    }
 
     @Test
     public void hasName(){
@@ -36,13 +43,13 @@ public class ParkTest {
 
     @Test
     public void checkPaddockCapacity(){
-        assertEquals(5, park.getParkPaddockCapacity());
+        assertEquals(3, park.parkPaddockCapacity());
     }
 
     @Test
     public void canAddPaddockToParkTrue(){
         park.addPaddock(paddock);
-        assertEquals(1, park.getPaddocksCount());
+        assertEquals(1, park.paddocksCount());
     }
 
     @Test
@@ -50,7 +57,7 @@ public class ParkTest {
         park.addPaddock(paddock);
         park.addPaddock(paddock2);
         park.addPaddock(paddock3);
-        assertEquals(2, park.getPaddocksCount());
+        assertEquals(2, park.paddocksCount());
     }
 
 }
