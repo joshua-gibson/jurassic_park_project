@@ -4,7 +4,7 @@ import '../style/ParkMap.css';
 const ParkMap = (props) => {
 
   const displayedPaddocks = props.paddocks.map((paddock, index) => {
-    return  <a href="/paddocks" key={index}>
+    return  <a href={`/paddocks/${paddock.id}`} key={index}>
             <div className={`paddock p${index}`}> p{index} <span className="tooltiptext">{paddock.name}</span> </div>
             </a>
   })
