@@ -6,6 +6,7 @@ const NavBar = (props) => {
 
   return (
     <>
+    <div className="metalBar"></div>
     <ul className="navbar">
 
       <li className="navbaritem">
@@ -14,9 +15,9 @@ const NavBar = (props) => {
       <li className="navbaritem">
           <Link to="/dinos">Manage Dinosaurs</Link>
       </li>
-      <li className="navbaritem">
+      {/* <li className="navbaritem">
           <Link to="/paddocks">Manage Paddocks</Link>
-      </li>
+      </li> */}
         
     </ul>
     </>

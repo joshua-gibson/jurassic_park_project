@@ -4,6 +4,15 @@
     
   }
 
+  .metalBar {
+    width: 100%;
+    height: 20px;
+    position: relative;
+    top: 10px;
+    
+    background: -webkit-linear-gradient(top,  #0f182b 0%,#2a3b53 33%,#2a3b53 66%,#0f182b 100%);
+  }
+
 .navbar{
     display: flex;
     flex-direction: row;
@@ -15,10 +24,10 @@
 
 .navbaritem{
     font-family: "jroar", serif;
-    font-size: 30px;
+    font-size: 50px;
     margin-right: 20px;
     padding-right: 20px;
-    height: 30px;
+    height: 60px;
     padding: 5px;
     list-style-type: none;
     border:2px solid;
