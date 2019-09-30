@@ -1,19 +1,23 @@
 import React from 'react';
+import DinosaurCard from './DinosaurCard'
+import '../style/card.css'
+
 
 const DinoCardList = (props) => {
 
    const dinos = props.dinosaurs.map((dinosaur, index) => {
-     return <p key={index}> {dinosaur.name}</p>
+     return <DinosaurCard key={index} name={dinosaur.name} avatar={"C"} subheader={dinosaur.species.dietType} image={dinosaur.species.url} content={dinosaur.species.info}/>
+
+     
+    //  <p key={index}> {dinosaur.name}</p>
+    
    })
 
 
   return (
-    <>
-       <h3>Dinosaur List</h3>
+    <div className="card">
        {dinos}
-
-
-    </>
+    </div>
   );
 
   }
