@@ -18,7 +18,7 @@ public class Species {
     @Column(name="length")
     private double length;
 
-    @Column(name="info")
+    @Column(name="info", length = 1024)
     private String info;
 
     @Column(name="url")

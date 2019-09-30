@@ -1,5 +1,4 @@
 import com.codeclan.jurassicpark.back_end.enums.DietType;
-import com.codeclan.jurassicpark.back_end.enums.ECarnivore;
 import com.codeclan.jurassicpark.back_end.models.*;
 import com.codeclan.jurassicpark.back_end.repositories.SpeciesRepository.SpeciesRepository;
 import org.junit.Before;

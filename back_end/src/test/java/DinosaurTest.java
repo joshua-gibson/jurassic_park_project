@@ -1,8 +1,6 @@
-import com.codeclan.jurassicpark.back_end.enums.EOmnivore;
 import com.codeclan.jurassicpark.back_end.models.Dinosaur;
 import com.codeclan.jurassicpark.back_end.models.Paddock;
 import com.codeclan.jurassicpark.back_end.models.Park;
-import com.codeclan.jurassicpark.back_end.repositories.PaddockRepository.PaddockRepository;
 import com.codeclan.jurassicpark.back_end.repositories.SpeciesRepository.SpeciesRepository;
 import org.junit.Before;
 import org.junit.Test;
