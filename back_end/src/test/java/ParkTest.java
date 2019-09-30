@@ -13,7 +13,7 @@ public class ParkTest {
 
     @Before
     public void before(){
-        park = new Park("Jurassic Park", 500, false, 5);
+        park = new Park("Jurassic Park", 500, 5);
         paddock = new Paddock("East Paddock", 50, 5, park);
 
     }
@@ -29,10 +29,6 @@ public class ParkTest {
         assertEquals(500, park.getCapacity());
     }
 
-    @Test
-    public void checkIfLockdown(){
-        assertEquals(false, park.getLockdown());
-    }
 
     @Test
     public void checkPaddockCapacity(){

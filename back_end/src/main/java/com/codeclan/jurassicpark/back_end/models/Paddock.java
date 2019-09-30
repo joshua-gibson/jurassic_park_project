@@ -99,6 +99,11 @@ public class Paddock {
     }
 
     public void addDinosaurToPaddock(Dinosaur dinosaur){
-        this.dinosaurs.add(dinosaur);
+        if (getDinosaurCount()< this.dinosaurCapacity){
+        this.dinosaurs.add(dinosaur);}
+    }
+
+    public void removeDinosaurFromPaddock(Dinosaur dinosaur){
+        this.dinosaurs.remove(dinosaur);
     }
 }
