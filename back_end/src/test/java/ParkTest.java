@@ -9,12 +9,16 @@ public class ParkTest {
 
     Park park;
     Paddock paddock;
+    Paddock paddock2;
+    Paddock paddock3;
 
 
     @Before
     public void before(){
-        park = new Park("Jurassic Park", 500, 5);
+        park = new Park("Jurassic Park", 500);
         paddock = new Paddock("East Paddock", 50, 5, park);
+        paddock2 = new Paddock("l", 50, 5, park);
+        paddock3 = new Paddock("b", 50, 5, park);
 
     }
 
@@ -32,14 +36,21 @@ public class ParkTest {
 
     @Test
     public void checkPaddockCapacity(){
-        assertEquals(5, park.getPaddockCapacity());
+        assertEquals(5, park.getParkPaddockCapacity());
     }
 
     @Test
-    public void canAddPaddock(){
+    public void canAddPaddockToParkTrue(){
         park.addPaddock(paddock);
         assertEquals(1, park.getPaddocksCount());
+    }
 
+    @Test
+    public void canAddPaddockToParkFalse(){
+        park.addPaddock(paddock);
+        park.addPaddock(paddock2);
+        park.addPaddock(paddock3);
+        assertEquals(2, park.getPaddocksCount());
     }
 
 }

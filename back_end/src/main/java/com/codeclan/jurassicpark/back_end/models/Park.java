@@ -2,14 +2,13 @@ package com.codeclan.jurassicpark.back_end.models;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="park")
+@Table(name="parks")
 public class Park {
 
     @Id
@@ -22,20 +21,16 @@ public class Park {
     @Column(name = "capacity")
     private int capacity;
 
-    @Column(name = "lockdown")
-    private Boolean lockdown;
-
-    @Column(name="paddock_capacity")
-    private int paddockCapacity;
+    @Column(name="park_paddock_capacity")
+    private int parkPaddockCapacity = 2;
 
     @JsonIgnore
     @OneToMany(mappedBy = "park", fetch = FetchType.LAZY)
     private List<Paddock> paddocks;
 
-    public Park(String name, int capacity, int paddockCapacity) {
+    public Park(String name, int capacity) {
         this.name = name;
         this.capacity = capacity;
-        this.paddockCapacity = paddockCapacity;
         this.paddocks = new ArrayList<>();
     }
 
@@ -75,12 +70,12 @@ public class Park {
     }
 
 
-    public int getPaddockCapacity() {
-        return paddockCapacity;
+    public int getParkPaddockCapacity() {
+        return parkPaddockCapacity;
     }
 
-    public void setPaddockCapacity(int paddockCapacity) {
-        this.paddockCapacity = paddockCapacity;
+    public void setParkPaddockCapacity(int parkPaddockCapacity) {
+        this.parkPaddockCapacity = parkPaddockCapacity;
     }
 
     public int getPaddocksCount() {
@@ -88,6 +83,8 @@ public class Park {
     }
 
     public void addPaddock(Paddock paddock) {
-        this.paddocks.add(paddock);
+        if (parkPaddockCapacity > getPaddocksCount()){
+            this.paddocks.add(paddock);
+        }
     }
 }

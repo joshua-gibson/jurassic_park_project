@@ -23,7 +23,7 @@ public class PaddockTest {
 
     @Before
     public void before(){
-        park = new Park("Jurassic Park", 500,  5);
+        park = new Park("Jurassic Park", 500);
         paddock = new Paddock("East Paddock", 50, 1, park);
         paddock2 = new Paddock("East Paddock", 50, 3, park);
         species = new Species("Indosuchus", DietType.CARNIVORE, 7.0, "Indosuchus had a flattened crest on its skull.", "http://images.dinosaurpictures.org/Indosuchus_7076.jpg");
@@ -73,6 +73,9 @@ public class PaddockTest {
         paddock2.removeDinosaurFromPaddock(herbivore);
         assertEquals(1, paddock2.getDinosaurCount());
     }
+
+
+
 
 
 }

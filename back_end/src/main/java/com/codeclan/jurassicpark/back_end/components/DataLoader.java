@@ -35,11 +35,34 @@ public class DataLoader implements ApplicationRunner {
 
     public void run(ApplicationArguments args) {
 
-        Park jurassicPark = new Park("Jurassic Park", 10, 2 );
+        Park jurassicPark = new Park("Jurassic Park", 10);
         parkRepository.save(jurassicPark);
 
-        Paddock paddock1 = new Paddock("paddock1", 1, 2, jurassicPark);
+        Paddock paddock1 = new Paddock("Swampy Copse", 50, 2, jurassicPark);
         paddockRepository.save(paddock1);
+
+        Paddock paddock2 = new Paddock("T-Rex Meadow", 20, 1, jurassicPark);
+        paddockRepository.save(paddock2);
+
+        Paddock paddock3 = new Paddock("Stony Grassland", 30, 5, jurassicPark);
+        paddockRepository.save(paddock3);
+
+        Paddock paddock4 = new Paddock("DUP Party", 30, 10, jurassicPark);
+        paddockRepository.save(paddock4);
+
+        Paddock paddock5 = new Paddock("Central view", 40, 5, jurassicPark);
+        paddockRepository.save(paddock5);
+
+        Paddock paddock6 = new Paddock("Herb Valley", 50, 7, jurassicPark);
+        paddockRepository.save(paddock6);
+
+        Paddock paddock7 = new Paddock("Grassy Knoll", 30, 4, jurassicPark);
+        paddockRepository.save(paddock7);
+
+        Paddock paddock8 = new Paddock("Nublar", 20, 4, jurassicPark);
+        paddockRepository.save(paddock8);
+
+
 
         speciesRepository.save(new Species("Indosuchus", DietType.CARNIVORE, 7.0, "Indosuchus had a flattened crest on its skull.", "http://images.dinosaurpictures.org/Indosuchus_7076.jpg"));
         speciesRepository.save(new Species( "Apatosaurus", DietType.HERBIVORE, 21.0, "Named the 'deceptive lizard' because its skull was confused with those of other sauropods until 1909.", "http://images.dinosaurpictures.org/apatosaurus_33e1.jpg"));

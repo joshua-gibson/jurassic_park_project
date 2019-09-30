@@ -1,4 +1,4 @@
-package config;
+package com.codeclan.jurassicpark.back_end.configs;
 
 import com.codeclan.jurassicpark.back_end.models.Dinosaur;
 import com.codeclan.jurassicpark.back_end.models.Paddock;
