@@ -71,14 +71,42 @@
     width: 100px;
     height: 100px;
     top: 600px; 
-    left: 350px;
+    left: 500px;
 }
 
 .p4 {
-    width: 75px;
-    height: 75px;
-    top: 100px; 
-    left: 350px;
+  width: 75px;
+  height: 75px;
+  top: 100px; 
+  left: 350px;
+}
+
+.p5 {
+  width: 50px;
+  height: 75px;
+  top: 275px; 
+  left: 550px;
+}
+
+.p6 {
+  width: 50px;
+  height: 50px;
+  top: 50px; 
+  left: 200px;
+}
+
+.p7 {
+  width: 75px;
+  height: 75px;
+  top: 600px; 
+  left: 300px;
+}
+
+.p8 {
+  width: 25px;
+  height: 25px;
+  top: 350px; 
+  left: 500px;
 }
   
   /* Tooltip text */
