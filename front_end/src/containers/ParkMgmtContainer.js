@@ -20,6 +20,9 @@ class ParkMgmtContainer extends Component {
     }
 
     handleNewVisitors(newVisitors){
+      // this.setState(prevState => {
+      //   return {visitors: prevState.visitors + this.props.newVisitors}
+      // })
       let currentVistors = this.state.visitors;
       let newVisitorTotal = currentVistors += parseInt(newVisitors);
       this.setState({visitors: newVisitorTotal});
