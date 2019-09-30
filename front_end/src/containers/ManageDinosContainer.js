@@ -9,8 +9,18 @@ class ManageDinosContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: "Manage Dinosaurs"
+            title: "Manage Dinosaurs",
+            dinosaurs: []
         };
+    }
+
+    componentDidMount() {
+        const url = "http://localhost:8080/dinosaurs";
+
+        fetch(url)
+        .then(res => res.json())
+        .then(dinosaurs => this.setState({dinosaurs: dinosaurs}))
+        .catch(err => console.error);
     }
 
     render() {

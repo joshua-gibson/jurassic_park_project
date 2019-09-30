@@ -1,4 +1,8 @@
+<<<<<<< HEAD:back_end/src/main/java/com/codeclan/jurassicpark/back_end/configs/SpringGlobalConfig.java
 package com.codeclan.jurassicpark.back_end.configs;
+=======
+package com.codeclan.jurassicpark.back_end.configurations;
+>>>>>>> develop:back_end/src/main/java/com/codeclan/jurassicpark/back_end/configurations/SpringGlobalConfig.java
 
 import com.codeclan.jurassicpark.back_end.models.Dinosaur;
 import com.codeclan.jurassicpark.back_end.models.Paddock;

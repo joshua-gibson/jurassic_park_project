@@ -25,6 +25,7 @@ public class DinosaurTest {
 
     @Before
     public void before(){
+
         park = new Park("Jurassic Park", 500);
         paddock = new Paddock("East Paddock", 50, 5, park);
         paddock2 = new Paddock("West Paddock", 50, 5, park);

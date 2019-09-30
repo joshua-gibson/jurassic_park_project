@@ -23,6 +23,7 @@ public class PaddockTest {
 
     @Before
     public void before(){
+
         park = new Park("Jurassic Park", 500);
         paddock = new Paddock("East Paddock", 50, 1, park);
         paddock2 = new Paddock("East Paddock", 50, 3, park);
