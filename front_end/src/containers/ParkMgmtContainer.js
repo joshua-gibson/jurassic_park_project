@@ -12,9 +12,21 @@ class ParkMgmtContainer extends Component {
         super(props);
         this.state = {
             title: "Park Management",
-            lockdown: false
+            lockdown: false,
+            paddocks: []
         };
         this.handleLockdown = this.handleLockdown.bind(this);
+    }
+
+    componentDidMount() {
+        const url = "http://localhost:8080/paddocks";
+
+        fetch(url)
+            .then(res => res.json())
+            .then(paddocks => this.setState({
+                paddocks: paddocks
+            }))
+            .catch(err => console.error);
     }
 
     handleLockdown(ld) {
@@ -25,7 +37,7 @@ class ParkMgmtContainer extends Component {
         return (
             <div className="container">
                 <PageTitleBar className="title" title={this.state.title}/>
-                <ParkMap lockdown={this.state.lockdown}/>
+                <ParkMap lockdown={this.state.lockdown} paddocks={this.state.paddocks}/>
                 <AddVisitorForm/>
                 <LockdownButton onChange={this.handleLockdown}/>
             </div>
