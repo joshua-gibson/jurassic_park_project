@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "dinosaurs")
-public abstract class Dinosaur {
+public class Dinosaur {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,11 +20,24 @@ public abstract class Dinosaur {
     @JoinColumn(name="paddock_id", nullable= false)
     private Paddock paddock;
 
+    @JsonIgnoreProperties("dinosaur")
+    @ManyToOne
+    @JoinColumn(name="species_id", nullable= false)
+    private Species species;
 
-    public Dinosaur(String name, Paddock paddock) {
+
+    public Dinosaur(String name, Paddock paddock, Species species) {
         this.name = name;
         this.paddock = paddock;
+        this.species = species;
     }
+
+    public Dinosaur() {
+    }
+
+    public Species getSpecies() { return species; }
+
+    public void setSpecies(Species species) { this.species = species; }
 
     public Long getId() {
         return id;

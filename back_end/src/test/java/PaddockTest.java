@@ -1,7 +1,9 @@
 import com.codeclan.jurassicpark.back_end.enums.ECarnivore;
 import com.codeclan.jurassicpark.back_end.models.*;
+import com.codeclan.jurassicpark.back_end.repositories.SpeciesRepository.SpeciesRepository;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.junit.Assert.assertEquals;
 
@@ -9,14 +11,18 @@ public class PaddockTest {
 
     Park park;
     Paddock paddock;
-    Carnivore carnivore;
-    Herbivore herbivore;
+    Dinosaur carnivore;
+    Dinosaur herbivore;
+
+    @Autowired
+    SpeciesRepository speciesRepository;
+
 
     @Before
     public void before(){
         park = new Park("Jurassic Park", 500, false, 5);
         paddock = new Paddock("East Paddock", 50, 5, park);
-        carnivore = new Carnivore("Dave", paddock, ECarnivore.TYRANNOSAURUS);
+        carnivore = new Dinosaur("Dave", paddock, speciesRepository.findAll().get(0));
 
     }
 
@@ -43,7 +49,7 @@ public class PaddockTest {
 
     @Test
     public void canAddDinosaur(){
-        paddock.addDinosaurs(carnivore);
+        paddock.addDinosaurToPaddock(carnivore);
         assertEquals(1, paddock.getDinosaurCount());
     }
 

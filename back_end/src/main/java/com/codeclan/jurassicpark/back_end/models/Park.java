@@ -32,10 +32,9 @@ public class Park {
     @OneToMany(mappedBy = "park", fetch = FetchType.LAZY)
     private List<Paddock> paddocks;
 
-    public Park(String name, int capacity, Boolean lockdown, int paddockCapacity) {
+    public Park(String name, int capacity, int paddockCapacity) {
         this.name = name;
         this.capacity = capacity;
-        this.lockdown = lockdown;
         this.paddockCapacity = paddockCapacity;
         this.paddocks = new ArrayList<>();
     }
@@ -75,13 +74,6 @@ public class Park {
         this.capacity = capacity;
     }
 
-    public Boolean getLockdown() {
-        return lockdown;
-    }
-
-    public void setLockdown(Boolean lockdown) {
-        this.lockdown = lockdown;
-    }
 
     public int getPaddockCapacity() {
         return paddockCapacity;

@@ -1,4 +1,4 @@
 package com.codeclan.jurassicpark.back_end.repositories.PaddockRepository;
 
-public class PaddockRepositoryImpl {
+public class PaddockRepositoryImpl implements PaddockRepositoryCustom {
 }

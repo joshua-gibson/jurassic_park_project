@@ -98,7 +98,7 @@ public class Paddock {
         return this.dinosaurs.size();
     }
 
-    public void addDinosaurs(Dinosaur dinosaur){
+    public void addDinosaurToPaddock(Dinosaur dinosaur){
         this.dinosaurs.add(dinosaur);
     }
 }
