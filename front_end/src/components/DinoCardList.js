@@ -1,10 +1,18 @@
 import React from 'react';
 
-const DinoCardList = () => {
+const DinoCardList = (props) => {
+
+   const dinos = props.dinosaurs.map((dinosaur, index) => {
+     return <p key={index}> {dinosaur.name}</p>
+   })
+
 
   return (
     <>
-       <h1>Dinosaur Card List placeholder</h1>
+       <h3>Dinosaur List</h3>
+       {dinos}
+
+
     </>
   );
 

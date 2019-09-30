@@ -27,9 +27,8 @@ class ManageDinosContainer extends Component {
         return (
             <div className="container">
                 <PageTitleBar className="title" title={this.state.title}/>
-                <h1>Manage Dinosaurs Container</h1>
                 <PaddockFilterForm/>
-                <DinoCardList/>
+                <DinoCardList dinosaurs={this.state.dinosaurs}/>
 
             </div>
         )
