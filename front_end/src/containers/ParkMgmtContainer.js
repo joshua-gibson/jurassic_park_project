@@ -3,25 +3,32 @@ import PageTitleBar from '../components/PageTitleBar'
 import ParkMap from '../components/ParkMap'
 import AddVisitorForm from '../components/AddVisitorForm'
 import LockdownButton from '../components/LockdownButton'
+import '../style/ParkMgmtContainer.css';
+
 
 class ParkMgmtContainer extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            title: "Park Management"
+            title: "Park Management",
+            lockdown: false
         };
+        this.handleLockdown = this.handleLockdown.bind(this);
+    }
+
+    handleLockdown(ld) {
+        this.setState({lockdown: ld});
     }
 
     render() {
         return (
-            <>
-                <PageTitleBar title={this.state.title}/>
-                <h1>Park Management Container</h1>
-                <ParkMap/>
+            <div className="container">
+                <PageTitleBar className="title" title={this.state.title}/>
+                <ParkMap lockdown={this.state.lockdown}/>
                 <AddVisitorForm/>
-                <LockdownButton/>
-            </>
+                <LockdownButton onChange={this.handleLockdown}/>
+            </div>
         )
     }
 }

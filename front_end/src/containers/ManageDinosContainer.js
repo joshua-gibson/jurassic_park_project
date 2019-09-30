@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PageTitleBar from '../components/PageTitleBar'
 import PaddockFilterForm from '../components/PaddockFilterForm'
 import DinoCardList from '../components/DinoCardList'
+import '../style/ManagePaddockContainer.css';
 
 class ManageDinosContainer extends Component {
 
@@ -14,13 +15,13 @@ class ManageDinosContainer extends Component {
 
     render() {
         return (
-            <>
-                <PageTitleBar title={this.state.title}/>
+            <div className="container">
+                <PageTitleBar className="title" title={this.state.title}/>
                 <h1>Manage Dinosaurs Container</h1>
                 <PaddockFilterForm/>
                 <DinoCardList/>
 
-            </>
+            </div>
         )
     }
 }

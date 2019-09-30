@@ -1,6 +1,6 @@
 @font-face {
     font-family: "jroar";
-    src: url('../style/Jungle Roar Bold.ttf') format('truetype');
+    src: url('../style/fonts/Jungle Roar Bold.ttf') format('truetype');
     
   }
 
@@ -9,6 +9,8 @@
     flex-direction: row;
     justify-content: center;
     text-align: center;
+    position: relative;
+    top: 20px;
 }
 
 .navbaritem{
@@ -20,7 +22,7 @@
     padding: 5px;
     list-style-type: none;
     border:2px solid;
-    border-color: black;        /* Green */
+    border-color: black;      
 }
 
 a:link {
