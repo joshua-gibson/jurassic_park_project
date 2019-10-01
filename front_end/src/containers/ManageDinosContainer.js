@@ -16,14 +16,18 @@ class ManageDinosContainer extends Component {
         this.filterByPaddock=this.filterByPaddock.bind(this);
     }
 
-    componentDidMount() {
+    getDinos(){
         const url = "http://localhost:8080/dinosaurs";
-        const url2 = "http://localhost:8080/parks/paddocks";
-
         fetch(url)
         .then(res => res.json())
         .then(dinosaurs => this.setState({dinosaurs: dinosaurs}))
         .catch(err => console.error);
+    }
+
+    componentDidMount() {
+        
+        this.getDinos();
+        const url2 = "http://localhost:8080/parks/paddocks";
 
         fetch(url2)
         .then(res => res.json())
@@ -34,13 +38,16 @@ class ManageDinosContainer extends Component {
     }
 
     filterByPaddock(paddockID){
+        this.getDinos();
         const url = `http://localhost:8080/paddocks/${paddockID}/dinosaurs`;
         console.log(url)
         fetch(url)
         .then(res => res.json())
         .then(res => res._embedded.dinosaurs)
-        .then(dinosaurs => this.setState({dinosaurs: dinosaurs}))
-        .catch(err => console.error);
+        .then(res => res.map((dino) => dino.id))
+        .then(res => res.map((id) => this.state.dinosaurs.find(x => x.id === id)))
+        .then(res => this.setState({dinosaurs: res}))
+        .catch(err => console.error)
     }
 
     render() {
