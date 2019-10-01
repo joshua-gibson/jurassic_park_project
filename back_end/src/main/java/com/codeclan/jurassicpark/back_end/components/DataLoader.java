@@ -78,19 +78,19 @@ public class DataLoader implements ApplicationRunner {
                 DietType.CARNIVORE,
                 14.0,
                 "Elasmosaurus was an aquatic dinosaur with an extremely long neck that likely fed on other smaller aquatic fauna like fish, molluscs, and squid. E.D. Cope mistakenly placed the skull of an Elasmosaurus on the much shorter tail rather than the extremely long neck.",
-                "http://images.dinosaurpictures.org/fantasy-elasmosaurus_0a70.jpg"));
+                "http://images.dinosaurpictures.org/elasmosaurus_586f.jpg"));
         speciesRepository.save(new Species(
                 "Spinosaurus",
                 DietType.CARNIVORE,
                 18.0,
                 "Spinosaurus was one of the largest carnivorous dinosaurs to walk the Earth. Its diet consisted mostly of fish and the large spines on its back likely formed a sail.",
-                "http://images.dinosaurpictures.org/spinosaurus_1_118f.jpg"));
+                "http://images.dinosaurpictures.org/Spinosaurus_BW2_0615.jpg"));
         speciesRepository.save(new Species(
                 "Tyrannosaurus",
                 DietType.CARNIVORE,
                 12.0,
                 "Tyrannosaurus is well-represented in both fiction and history with over 50 specimens discovered. It and was one of the last non-avian dinosaurs to exist before the extinction event. Tyrannosaurus had a massive skull and a long heavy tail.",
-                "http://images.dinosaurpictures.org/dinosaurs-tyrannosaurus_00336745_13a8.jpg"));
+                "http://images.dinosaurpictures.org/tyrannosaurusSP_a2fb.jpg"));
         speciesRepository.save(new Species(
                 "Utahraptor",
                 DietType.CARNIVORE,
@@ -126,7 +126,7 @@ public class DataLoader implements ApplicationRunner {
                  DietType.HERBIVORE,
                  4.0,
                  "Dracorex hogwartsia was a pachycephalosaur that did not have a domed head. Instead, its skull was adorned with spikes and frills reminiscent of a dragon. A skull was discovered in the Hell Creek Formation in South Dakota and donated to the Children's Museum of Indianapolis in 2004. Its name was inspired by J.K. Rowling's Harry Potter series and the young visitors to the children's museum.",
-                 " http://images.dinosaurpictures.org/Dracorex_f6c1.jpg"));
+                 " http://images.dinosaurpictures.org/Dracorex_BW_8b80.jpg"));
          speciesRepository.save(new Species(
                  "Giraffatitan",
                  DietType.HERBIVORE,
