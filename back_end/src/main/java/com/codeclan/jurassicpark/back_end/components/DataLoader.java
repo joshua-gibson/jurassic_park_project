@@ -194,7 +194,7 @@ public class DataLoader implements ApplicationRunner {
         dinosaurRepository.save(omni1);
 
         Dinosaur carn2 = new Dinosaur("Daisy", paddock1, speciesRepository.findSpeciesByType("Compsognathus"));
-        dinosaurRepository.save(carn1);
+        dinosaurRepository.save(carn2);
 
 
 

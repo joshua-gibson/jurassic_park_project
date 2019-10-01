@@ -85,6 +85,31 @@ public class Park {
     public void addPaddock(Paddock paddock) {
         if (parkPaddockCapacity > paddocksCount()){
             this.paddocks.add(paddock);
+
         }
     }
+
+    public Paddock findPaddockById(int id){
+        return this.paddocks.get(id);
+    }
+
+    public void moveDinosaur(Dinosaur selectedDinosaur, Paddock paddock){
+
+//        Dinosaur dino1 = paddock.findDinosaurById(dinoID);
+//        Paddock newPaddock = park.findPaddockById(paddockId);
+//
+//        paddock.removeDinosaurFromPaddock(dino1);
+//        newPaddock.addDinosaurToPaddock(dino1);
+
+        selectedDinosaur.setPaddock(paddock);
+
+
+
+    }
+
+
+
+
+
+
 }

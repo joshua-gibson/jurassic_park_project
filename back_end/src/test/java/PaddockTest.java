@@ -74,7 +74,20 @@ public class PaddockTest {
         assertEquals(1, paddock2.dinosaurCount());
     }
 
+    @Test
+    public void canFindDinosaurById(){
+        paddock2.addDinosaurToPaddock(herbivore);
+        paddock2.addDinosaurToPaddock(herbivore2);
+        assertEquals(herbivore2, paddock2.findDinosaurById(1));
+    }
 
+    @Test
+    public void canRemoveDinosaurById(){
+        paddock2.addDinosaurToPaddock(herbivore);
+        paddock2.addDinosaurToPaddock(herbivore2);
+        paddock2.removeDinosaurById(1);
+        assertEquals(1, paddock2.dinosaurCount());
+    }
 
 
 

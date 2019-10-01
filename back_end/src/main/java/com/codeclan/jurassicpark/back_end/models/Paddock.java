@@ -106,4 +106,15 @@ public class Paddock {
     public void removeDinosaurFromPaddock(Dinosaur dinosaur){
         this.dinosaurs.remove(dinosaur);
     }
+
+    public Dinosaur removeDinosaurById(int id) {
+        return this.dinosaurs.remove(id); }
+
+    public Dinosaur findDinosaurById(int id){
+        return this.dinosaurs.get(id);
+    }
+
 }
+
+
+
