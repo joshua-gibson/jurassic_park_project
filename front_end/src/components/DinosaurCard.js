@@ -64,10 +64,10 @@ export default function DinosaurCard(props) {
 
   return (
     <Card className={classes.card}>
-      <CardHeader
-
-        avatar=
-          <Avatar aria-label="DinosaurCard" className={classes.avatar}>
+      <CardHeader 
+      avatar=<Avatar 
+      aria-label="DinosaurCard" 
+      className={classes.avatar}>
            {props.avatar}
           </Avatar>
 
@@ -108,5 +108,6 @@ export default function DinosaurCard(props) {
         </CardContent>
       </Collapse>
     </Card>
+
   );
 }

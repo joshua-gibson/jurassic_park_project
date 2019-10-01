@@ -120,7 +120,7 @@ public class DataLoader implements ApplicationRunner {
                  DietType.HERBIVORE,
                  30.0,
                  "Brachiosaurus was a large, North American sauropod dinosaur with an arch encircling its nasal opening.",
-                 "ttp://images.dinosaurpictures.org/papo_brachiosaurus_2012_cf3f.jpg"));
+                 "http://images.dinosaurpictures.org/papo_brachiosaurus_2012_cf3f.jpg"));
          speciesRepository.save(new Species(
                  "Dracorex",
                  DietType.HERBIVORE,
@@ -194,7 +194,7 @@ public class DataLoader implements ApplicationRunner {
         dinosaurRepository.save(omni1);
 
         Dinosaur carn2 = new Dinosaur("Daisy", paddock1, speciesRepository.findSpeciesByType("Compsognathus"));
-        dinosaurRepository.save(carn1);
+        dinosaurRepository.save(carn2);
 
 
 
