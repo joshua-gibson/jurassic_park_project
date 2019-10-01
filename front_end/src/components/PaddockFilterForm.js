@@ -18,6 +18,7 @@ const PaddockFilterForm = (props) => {
        <h3>Filter By Paddock:</h3>
        <form>
           <select onChange={onSelect}>
+          <option key="99" value="99">All</option>
             {paddockoptions}
           </select> 
         </form> 
