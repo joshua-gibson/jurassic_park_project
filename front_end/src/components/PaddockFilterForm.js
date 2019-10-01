@@ -1,10 +1,19 @@
 import React from 'react';
 
-const PaddockFilterForm = () => {
+const PaddockFilterForm = (props) => {
+
+  const paddockoptions = props.paddocks.map((paddock, index) => {
+    return <option value="{paddock.name}">{paddock.name}</option>
+  })
 
   return (
     <>
-       <h1>Paddock Filter placeholder</h1>
+       <h3>Filter By Paddock:</h3>
+       <form>
+            <select>
+                {paddockoptions}
+            </select> 
+            </form> 
     </>
   );
 
