@@ -1,12 +1,12 @@
 import React from 'react';
-import DinosaurCard from './DinosaurCard'
+import LabCard from './LabCard'
 import '../style/card.css'
 
 
 const DinoCardList = (props) => {
 
     const dinos = props.dinosaurs.map((dinosaur, index) => {
-        return <DinosaurCard 
+        return <LabCard 
         key = {index}
         name={dinosaur.type} 
         avatar={dinosaur.dietType.charAt(0)} 
