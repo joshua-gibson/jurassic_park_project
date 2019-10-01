@@ -3,8 +3,6 @@ import PageTitleBar from '../components/PageTitleBar'
 import PaddockFilterForm from '../components/PaddockFilterForm'
 import LabCardList from '../components/LabCardList'
 import '../style/ManagePaddockContainer.css';
-import '../components/ModalPopup';
-import ModalPopup from '../components/ModalPopup';
 
 class ManageLabContainer extends Component {
 
@@ -28,7 +26,6 @@ class ManageLabContainer extends Component {
     render() {
         return (
             <div className="container">
-                <ModalPopup show={true} size={"medium"} showCloseButton={true}/>
                 <PageTitleBar className="title" title={this.state.title}/>
                 <PaddockFilterForm/>
                 <LabCardList dinosaurs={this.state.dinosaurs}/>
