@@ -23,6 +23,7 @@ class Main extends Component {
               <Switch>
                 <Route exact path="/" component={ParkMgmtContainer}/>
                 <Route path="/dinos" component={ManageDinosContainer}/>
+                <Route path="/lab" component={ManageDinosContainer}/>
                 <Route path="/paddocks" component={ManagePaddockContainer}/>
                 {/* <Route 
                   path="/pricing" 
