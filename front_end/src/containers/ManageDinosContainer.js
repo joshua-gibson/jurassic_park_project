@@ -10,15 +10,35 @@ class ManageDinosContainer extends Component {
         super(props);
         this.state = {
             title: "Manage Dinosaurs",
-            dinosaurs: []
+            dinosaurs: [],
+            paddocks: []
         };
+        this.filterByPaddock=this.filterByPaddock.bind(this);
     }
 
     componentDidMount() {
         const url = "http://localhost:8080/dinosaurs";
+        const url2 = "http://localhost:8080/parks/paddocks";
 
         fetch(url)
         .then(res => res.json())
+        .then(dinosaurs => this.setState({dinosaurs: dinosaurs}))
+        .catch(err => console.error);
+
+        fetch(url2)
+        .then(res => res.json())
+        .then(paddocks => this.setState({
+            paddocks: paddocks
+        }))
+        .catch(err => console.error);
+    }
+
+    filterByPaddock(paddockID){
+        const url = `http://localhost:8080/paddocks/${paddockID}/dinosaurs`;
+        console.log(url)
+        fetch(url)
+        .then(res => res.json())
+        .then(res => res._embedded.dinosaurs)
         .then(dinosaurs => this.setState({dinosaurs: dinosaurs}))
         .catch(err => console.error);
     }
@@ -27,7 +47,7 @@ class ManageDinosContainer extends Component {
         return (
             <div className="container">
                 <PageTitleBar className="title" title={this.state.title}/>
-                <PaddockFilterForm/>
+                <PaddockFilterForm filterByPaddock={this.filterByPaddock} paddocks={this.state.paddocks}/>
                 <DinoCardList dinosaurs={this.state.dinosaurs}/>
 
             </div>

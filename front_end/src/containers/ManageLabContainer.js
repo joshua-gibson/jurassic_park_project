@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PageTitleBar from '../components/PageTitleBar'
-import PaddockFilterForm from '../components/PaddockFilterForm'
 import LabCardList from '../components/LabCardList'
 import '../style/ManagePaddockContainer.css';
 
