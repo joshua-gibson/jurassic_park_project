@@ -3,7 +3,7 @@ import LabCard from './LabCard'
 import '../style/card.css'
 
 
-const DinoCardList = (props) => {
+const LabCardList = (props) => {
 
     const dinos = props.dinosaurs.map((dinosaur, index) => {
         return <LabCard 
@@ -12,6 +12,7 @@ const DinoCardList = (props) => {
         avatar={dinosaur.dietType.charAt(0)} 
         image={dinosaur.url} 
         content={dinosaur.info}
+        paddocks={props.paddocks}
         />
 
     })
@@ -25,4 +26,4 @@ const DinoCardList = (props) => {
 
 }
 
-export default DinoCardList;
+export default LabCardList;
