@@ -9,10 +9,15 @@ const LabCardList = (props) => {
         return <LabCard 
         key = {index}
         name={dinosaur.type} 
+        species={dinosaur.id}
         avatar={dinosaur.dietType.charAt(0)} 
         image={dinosaur.url} 
         content={dinosaur.info}
         paddocks={props.paddocks}
+        hs={props.hs}
+        snn={props.snn}
+        sns={props.sns}
+        snp={props.snp}
         />
 
     })
