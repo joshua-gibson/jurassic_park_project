@@ -39,14 +39,9 @@ public class DinosaurController {
     }
 
 
-    @GetMapping(value = "")
+    @GetMapping(path = "/tidy")
     public List<Dinosaur> getAllDinosaurs(){
         return dinosaurRepository.findAll();
-    }
-
-    @PostMapping(path = "/add", consumes = "application/json", produces = "application/json")
-    public void addMember(@RequestBody Dinosaur newDino) {
-        dinosaurRepository.save(newDino);
     }
 
 
