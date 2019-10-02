@@ -78,19 +78,19 @@ public class DataLoader implements ApplicationRunner {
                 DietType.CARNIVORE,
                 14.0,
                 "Elasmosaurus was an aquatic dinosaur with an extremely long neck that likely fed on other smaller aquatic fauna like fish, molluscs, and squid. E.D. Cope mistakenly placed the skull of an Elasmosaurus on the much shorter tail rather than the extremely long neck.",
-                "http://images.dinosaurpictures.org/fantasy-elasmosaurus_0a70.jpg"));
+                "http://images.dinosaurpictures.org/elasmosaurus_586f.jpg"));
         speciesRepository.save(new Species(
                 "Spinosaurus",
                 DietType.CARNIVORE,
                 18.0,
                 "Spinosaurus was one of the largest carnivorous dinosaurs to walk the Earth. Its diet consisted mostly of fish and the large spines on its back likely formed a sail.",
-                "http://images.dinosaurpictures.org/spinosaurus_1_118f.jpg"));
+                "http://images.dinosaurpictures.org/Spinosaurus_BW2_0615.jpg"));
         speciesRepository.save(new Species(
                 "Tyrannosaurus",
                 DietType.CARNIVORE,
                 12.0,
                 "Tyrannosaurus is well-represented in both fiction and history with over 50 specimens discovered. It and was one of the last non-avian dinosaurs to exist before the extinction event. Tyrannosaurus had a massive skull and a long heavy tail.",
-                "http://images.dinosaurpictures.org/dinosaurs-tyrannosaurus_00336745_13a8.jpg"));
+                "http://images.dinosaurpictures.org/tyrannosaurusSP_a2fb.jpg"));
         speciesRepository.save(new Species(
                 "Utahraptor",
                 DietType.CARNIVORE,
@@ -120,13 +120,13 @@ public class DataLoader implements ApplicationRunner {
                  DietType.HERBIVORE,
                  30.0,
                  "Brachiosaurus was a large, North American sauropod dinosaur with an arch encircling its nasal opening.",
-                 "ttp://images.dinosaurpictures.org/papo_brachiosaurus_2012_cf3f.jpg"));
+                 "http://images.dinosaurpictures.org/papo_brachiosaurus_2012_cf3f.jpg"));
          speciesRepository.save(new Species(
                  "Dracorex",
                  DietType.HERBIVORE,
                  4.0,
                  "Dracorex hogwartsia was a pachycephalosaur that did not have a domed head. Instead, its skull was adorned with spikes and frills reminiscent of a dragon. A skull was discovered in the Hell Creek Formation in South Dakota and donated to the Children's Museum of Indianapolis in 2004. Its name was inspired by J.K. Rowling's Harry Potter series and the young visitors to the children's museum.",
-                 " http://images.dinosaurpictures.org/Dracorex_f6c1.jpg"));
+                 " http://images.dinosaurpictures.org/Dracorex_BW_8b80.jpg"));
          speciesRepository.save(new Species(
                  "Giraffatitan",
                  DietType.HERBIVORE,
@@ -197,7 +197,47 @@ public class DataLoader implements ApplicationRunner {
         dinosaurRepository.save(carn2);
 
 
+        Dinosaur carn3 = new Dinosaur("Luke", paddock2, speciesRepository.findSpeciesByType("Khaan"));
+        dinosaurRepository.save(carn3);
+        Dinosaur carn4 = new Dinosaur("Leia", paddock2, speciesRepository.findSpeciesByType("Khaan"));
+        dinosaurRepository.save(carn4);
+        Dinosaur carn5 = new Dinosaur("Obi-Wan", paddock2, speciesRepository.findSpeciesByType("Compsognathus"));
+        dinosaurRepository.save(carn5);
+        Dinosaur carn6 = new Dinosaur("Jar-Jar", paddock2, speciesRepository.findSpeciesByType("Allosaurus"));
+        dinosaurRepository.save(carn6);
 
+        Dinosaur herb2 = new Dinosaur("Mal", paddock3, speciesRepository.findSpeciesByType("Xenoceratops"));
+        dinosaurRepository.save(herb2);
+        Dinosaur herb3 = new Dinosaur("Jayne", paddock3, speciesRepository.findSpeciesByType("Perasaurolophus"));
+        dinosaurRepository.save(herb3);
+        Dinosaur herb4 = new Dinosaur("River", paddock3, speciesRepository.findSpeciesByType("Jingshanosaurus"));
+        dinosaurRepository.save(herb4);
+
+        Dinosaur herb5 = new Dinosaur("Inara", paddock4, speciesRepository.findSpeciesByType("Perasaurolophus"));
+        dinosaurRepository.save(herb5);
+        Dinosaur herb6 = new Dinosaur("Kaylee", paddock4, speciesRepository.findSpeciesByType("Minmi"));
+        dinosaurRepository.save(herb6);
+        Dinosaur herb7 = new Dinosaur("Wash", paddock4, speciesRepository.findSpeciesByType("Apotasaurus"));
+        dinosaurRepository.save(herb7);
+
+
+        Dinosaur herb8 = new Dinosaur("Victor", paddock5, speciesRepository.findSpeciesByType("Jingshanosaurus"));
+        dinosaurRepository.save(herb8);
+        Dinosaur herb9 = new Dinosaur("Pam", paddock5, speciesRepository.findSpeciesByType("Perasaurolophus"));
+        dinosaurRepository.save(herb9);
+
+        Dinosaur herb10 = new Dinosaur("Andy", paddock6, speciesRepository.findSpeciesByType("Minmi"));
+        dinosaurRepository.save(herb10);
+
+        Dinosaur carn7 = new Dinosaur("Slate", paddock7, speciesRepository.findSpeciesByType("Compsognathus"));
+        dinosaurRepository.save(carn7);
+        Dinosaur carn8 = new Dinosaur("Henry", paddock7, speciesRepository.findSpeciesByType("Utahraptor"));
+        dinosaurRepository.save(carn8);
+
+        Dinosaur carn9 = new Dinosaur("Angus", paddock8, speciesRepository.findSpeciesByType("Tyrannosaurus"));
+        dinosaurRepository.save(carn9);
+        Dinosaur carn10 = new Dinosaur("Jolie", paddock8, speciesRepository.findSpeciesByType("Tyrannosaurus"));
+        dinosaurRepository.save(carn10);
 
     }
 }
