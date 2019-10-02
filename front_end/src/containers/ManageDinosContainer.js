@@ -16,7 +16,7 @@ class ManageDinosContainer extends Component {
     }
 
     getDinos(){
-        const url = "http://localhost:8080/dinosaurs";
+        const url = "http://localhost:8080/dinosaurs/tidy";
         fetch(url)
         .then(res => res.json())
         .then(dinosaurs => this.setState({dinosaurs: dinosaurs}))

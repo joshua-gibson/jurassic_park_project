@@ -21,7 +21,6 @@ class ManageLabContainer extends Component {
 
         fetch(url)
         .then(res => res.json())
-        .then(res => res._embedded.species)
         .then(dinosaurs => this.setState({dinosaurs: dinosaurs}))
         .catch(err => console.error);
 
