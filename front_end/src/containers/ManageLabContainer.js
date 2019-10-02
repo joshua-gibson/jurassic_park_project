@@ -38,10 +38,10 @@ class ManageLabContainer extends Component {
 
     handleSubmit(event){
         event.preventDefault();
-          
+        // const species = event.target.name;
           const subData =   {
-            "name": "Hillbilly2",
-            "paddock": "http://localhost:8080/paddocks/1",
+            "name": `${this.state.newName}`,
+            "paddock": `http://localhost:8080/paddocks/${this.state.newPaddock}`,
             "species": "http://localhost:8080/species/1"
           };
     

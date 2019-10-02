@@ -42,7 +42,7 @@ export default function LabCard(props) {
   const classes = useStyles();
 
   const paddockoptions = props.paddocks.map((paddock, index) => {
-    return <option key={index} value={paddock.name}>{paddock.name}</option>
+    return <option key={index} value={paddock.id}>{paddock.name}</option>
   })
 
 
