@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PageTitleBar from '../components/PageTitleBar'
 import '../style/ManagePaddockContainer.css';
-import PaddockCardList from '../components/PaddockCardList';
+import PaddockInfo from '../components/PaddockInfo';
 
 class ManagePaddockContainer extends Component {
 
@@ -9,17 +9,18 @@ class ManagePaddockContainer extends Component {
         super(props);
         this.state = {
             title: "Manage Paddocks",
-            paddocks: []
+            paddock: null
         };
     }
 
     componentDidMount() {
-        const url = "http://localhost:8080/parks/paddocks";
+        const id = this.props.match.params.id;
+        const url = `http://localhost:8080/paddocks/${id}`;
         
         fetch(url)
             .then(res => res.json())
-            .then(paddocks => this.setState({
-                paddocks: paddocks
+            .then(paddock => this.setState({
+                paddock: paddock
             }))
             .catch(err => console.error);
     }
@@ -29,7 +30,7 @@ class ManagePaddockContainer extends Component {
             <div className="container">
                 <PageTitleBar className="title" title={this.state.title}/>
                 <h1>Manage Paddock Container</h1>
-                <PaddockCardList paddocks={this.state.paddocks}/>
+                <PaddockInfo paddock={this.state.paddock}/>
             </div>
         )
     }
