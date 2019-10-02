@@ -9,6 +9,7 @@ import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
+import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -55,12 +56,17 @@ const useStyles = makeStyles(theme => ({
 
 export default function DinosaurCard(props) {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
+
+  const paddockoptions = props.paddocks.map((paddock, index) => {
+    return <option key={index} value={paddock.id}>{paddock.name}</option>
+  })
 
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+  function handleSubmit(){
+
+    props.gsd(props.species);
+  
+  }
 
   return (
     <Card className={classes.card}>
@@ -72,7 +78,8 @@ export default function DinosaurCard(props) {
           </Avatar>
 
         title={props.name}
-        subheader={props.subheader}
+        subheader={props.paddockName}
+
       />
       <CardMedia
         className={classes.media}
@@ -87,7 +94,17 @@ export default function DinosaurCard(props) {
       {/* <Icon>add_circle</Icon> */}
     </div>
 
-    {/* <h3>add new stuff here</h3> */}
+    <form>
+            <label>Name: </label>
+            <select onChange={props.gsp}>
+            <option key="99" value="None">None</option>
+                {paddockoptions}
+            </select> 
+            <ArrowRightAltIcon onClick={handleSubmit} > ArrowRightAltIcon </ArrowRightAltIcon>
+            {/* <input onClick={handleSubmit} type="submit" value="Submit"></input> */}
+            </form> 
+            <br/>
+
     </Card>
 
   );

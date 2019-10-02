@@ -79,7 +79,7 @@ export default function LabCard(props) {
             <form>
                 <label>Name: </label>
             <input onChange={props.snn} type="text" name="name"/> <br/>
-            <label>Name: </label>
+            <label>Paddock: </label>
             <select onChange={props.snp}>
             <option key="99" value="None">None</option>
                 {paddockoptions}

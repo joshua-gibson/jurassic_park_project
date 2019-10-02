@@ -82,7 +82,14 @@ class ManageLabContainer extends Component {
         return (
             <div className="container">
                 <PageTitleBar className="title" title={this.state.title}/>
-                <LabCardList hs={this.handleSubmit} snn = {this.setNewName} snp = {this.setNewPaddock} sns = {this.setNewSpecies} dinosaurs={this.state.dinosaurs} paddocks={this.state.paddocks}/>
+                <LabCardList 
+                  hs={this.handleSubmit} 
+                  snn = {this.setNewName} 
+                  snp = {this.setNewPaddock} 
+                  sns = {this.setNewSpecies} 
+                  dinosaurs={this.state.dinosaurs} 
+                  paddocks={this.state.paddocks}
+                />
 
             </div>
         )
