@@ -8,6 +8,7 @@ const DinoCardList = (props) => {
    const dinos = props.dinosaurs.map((dinosaur, index) => {
      return <DinosaurCard 
      key={index} 
+     id={dinosaur.id}
      name={dinosaur.name} 
      avatar={dinosaur.species.dietType.charAt(0)} 
      subheader={dinosaur.species.dietType} 

@@ -17,6 +17,7 @@ class ManageDinosContainer extends Component {
         this.filterByPaddock=this.filterByPaddock.bind(this);
         this.getSelectedPaddock=this.getSelectedPaddock.bind(this);
         this.getSelectedDino=this.getSelectedDino.bind(this);
+        this.refreshpage=this.refreshpage.bind(this);
     }
 
     getDinos(){
@@ -66,12 +67,26 @@ class ManageDinosContainer extends Component {
             let newDino = await this.setState({selectedDino: dino});
             this.handleChangePaddock();
             console.log(newDino);
+            
           } catch(error) {
             console.error(error);
           }
-          
-        // this.setState({newSpecies: species});
-        // this.handleSubmit();
+      }
+
+
+      async refreshpage(dino){
+  
+    const sleep = (milliseconds) => {
+        return new Promise(resolve => setTimeout(resolve, milliseconds))
+      }
+      
+    sleep(500)
+        .then(this.getSelectedDino(dino))
+        .then(window.location.reload())
+        .catch(err => console.error);
+      
+
+    
       }
 
     filterByPaddock(paddockID){
@@ -96,7 +111,7 @@ class ManageDinosContainer extends Component {
                 dinosaurs={this.state.dinosaurs} 
                 paddocks={this.state.paddocks} 
                 gsp={this.getSelectedPaddock}
-                gsd={this.getSelectedDino}
+                gsd={this.refreshpage}
                 />
 
             </div>

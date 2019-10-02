@@ -64,7 +64,7 @@ export default function DinosaurCard(props) {
 
   function handleSubmit(){
 
-    props.gsd(props.species);
+    props.gsd(props.id);
   
   }
 
@@ -95,7 +95,7 @@ export default function DinosaurCard(props) {
     </div>
 
     <form>
-            <label>Name: </label>
+            <label>Move To: </label>
             <select onChange={props.gsp}>
             <option key="99" value="None">None</option>
                 {paddockoptions}
