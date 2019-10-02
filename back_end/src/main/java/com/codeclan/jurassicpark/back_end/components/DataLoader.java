@@ -197,7 +197,47 @@ public class DataLoader implements ApplicationRunner {
         dinosaurRepository.save(carn2);
 
 
+        Dinosaur carn3 = new Dinosaur("Luke", paddock2, speciesRepository.findSpeciesByType("Khaan"));
+        dinosaurRepository.save(carn3);
+        Dinosaur carn4 = new Dinosaur("Leia", paddock2, speciesRepository.findSpeciesByType("Khaan"));
+        dinosaurRepository.save(carn4);
+        Dinosaur carn5 = new Dinosaur("Obi-Wan", paddock2, speciesRepository.findSpeciesByType("Compsognathus"));
+        dinosaurRepository.save(carn5);
+        Dinosaur carn6 = new Dinosaur("Jar-Jar", paddock2, speciesRepository.findSpeciesByType("Allosaurus"));
+        dinosaurRepository.save(carn6);
 
+        Dinosaur herb2 = new Dinosaur("Mal", paddock3, speciesRepository.findSpeciesByType("Xenoceratops"));
+        dinosaurRepository.save(herb2);
+        Dinosaur herb3 = new Dinosaur("Jayne", paddock3, speciesRepository.findSpeciesByType("Perasaurolophus"));
+        dinosaurRepository.save(herb3);
+        Dinosaur herb4 = new Dinosaur("River", paddock3, speciesRepository.findSpeciesByType("Jingshanosaurus"));
+        dinosaurRepository.save(herb4);
+
+        Dinosaur herb5 = new Dinosaur("Inara", paddock4, speciesRepository.findSpeciesByType("Perasaurolophus"));
+        dinosaurRepository.save(herb5);
+        Dinosaur herb6 = new Dinosaur("Kaylee", paddock4, speciesRepository.findSpeciesByType("Minmi"));
+        dinosaurRepository.save(herb6);
+        Dinosaur herb7 = new Dinosaur("Wash", paddock4, speciesRepository.findSpeciesByType("Apotasaurus"));
+        dinosaurRepository.save(herb7);
+
+
+        Dinosaur herb8 = new Dinosaur("Victor", paddock5, speciesRepository.findSpeciesByType("Jingshanosaurus"));
+        dinosaurRepository.save(herb8);
+        Dinosaur herb9 = new Dinosaur("Pam", paddock5, speciesRepository.findSpeciesByType("Perasaurolophus"));
+        dinosaurRepository.save(herb9);
+
+        Dinosaur herb10 = new Dinosaur("Andy", paddock6, speciesRepository.findSpeciesByType("Minmi"));
+        dinosaurRepository.save(herb10);
+
+        Dinosaur carn7 = new Dinosaur("Slate", paddock7, speciesRepository.findSpeciesByType("Compsognathus"));
+        dinosaurRepository.save(carn7);
+        Dinosaur carn8 = new Dinosaur("Henry", paddock7, speciesRepository.findSpeciesByType("Utahraptor"));
+        dinosaurRepository.save(carn8);
+
+        Dinosaur carn9 = new Dinosaur("Angus", paddock8, speciesRepository.findSpeciesByType("Tyrannosaurus"));
+        dinosaurRepository.save(carn9);
+        Dinosaur carn10 = new Dinosaur("Jolie", paddock8, speciesRepository.findSpeciesByType("Tyrannosaurus"));
+        dinosaurRepository.save(carn10);
 
     }
 }
