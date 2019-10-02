@@ -12,11 +12,13 @@ class ManageLabContainer extends Component {
             dinosaurs: [],
             paddocks: [],
             newName: null,
-            newPaddock: null
+            newPaddock: null,
+            newSpecies: null
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.setNewName = this.setNewName.bind(this);
         this.setNewPaddock = this.setNewPaddock.bind(this);
+        this.setNewSpecies = this.setNewSpecies.bind(this);
     }
 
     componentDidMount() {
@@ -36,13 +38,12 @@ class ManageLabContainer extends Component {
         .catch(err => console.error);
     }
 
-    handleSubmit(event){
-        event.preventDefault();
-        // const species = event.target.name;
+    handleSubmit(){
+        // event.preventDefault();
           const subData =   {
             "name": `${this.state.newName}`,
             "paddock": `http://localhost:8080/paddocks/${this.state.newPaddock}`,
-            "species": "http://localhost:8080/species/1"
+            "species": `http://localhost:8080/species/1${this.state.newSpecies}`
           };
     
           fetch('http://localhost:8080/dinosaurs', {
@@ -63,11 +64,15 @@ class ManageLabContainer extends Component {
         this.setState({newPaddock: paddock});
       }
 
+      setNewSpecies(species){
+        this.setState({newSpecies: species});
+      }
+
     render() {
         return (
             <div className="container">
                 <PageTitleBar className="title" title={this.state.title}/>
-                <LabCardList hs={this.handleSubmit} snn = {this.setNewName} snp = {this.setNewPaddock} dinosaurs={this.state.dinosaurs} paddocks={this.state.paddocks}/>
+                <LabCardList hs={this.handleSubmit} snn = {this.setNewName} snp = {this.setNewPaddock} sns = {this.setNewSpecies} dinosaurs={this.state.dinosaurs} paddocks={this.state.paddocks}/>
 
             </div>
         )

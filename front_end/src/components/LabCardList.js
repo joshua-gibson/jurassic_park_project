@@ -16,6 +16,7 @@ const LabCardList = (props) => {
         paddocks={props.paddocks}
         hs={props.hs}
         snn={props.snn}
+        sns={props.sns}
         snp={props.snp}
         />
 

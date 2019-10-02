@@ -45,6 +45,13 @@ export default function LabCard(props) {
     return <option key={index} value={paddock.id}>{paddock.name}</option>
   })
 
+  function handleSubmit(){
+
+    props.sns(props.species);
+    props.hs();
+
+  }
+
 
 
   return (
@@ -81,7 +88,7 @@ export default function LabCard(props) {
                 {paddockoptions}
             </select> 
             <br/>
-            <Icon onClick={props.hs} >add_circle</Icon>
+            <Icon onClick={handleSubmit} >add_circle</Icon>
             {/* <input onClick={handleSubmit} type="submit" value="Submit"></input> */}
             </form> 
 
