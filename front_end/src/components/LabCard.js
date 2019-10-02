@@ -42,8 +42,14 @@ export default function LabCard(props) {
   const classes = useStyles();
 
   const paddockoptions = props.paddocks.map((paddock, index) => {
-    return <option value="{paddock.name}">{paddock.name}</option>
+    return <option key={index} value={paddock.id}>{paddock.name}</option>
   })
+
+  function handleSubmit(){
+
+    props.sns(props.species);
+    // props.hs();
+  }
 
   return (
     <Card className={classes.card}>
@@ -72,14 +78,18 @@ export default function LabCard(props) {
 
             <form>
                 <label>Name: </label>
-            <input type="text" name="name"/> <br/>
+            <input onChange={props.snn} type="text" name="name"/> <br/>
             <label>Name: </label>
-            <select>
+            <select onChange={props.snp}>
+            <option key="99" value="None">None</option>
                 {paddockoptions}
             </select> 
+            <br/>
+            <Icon onClick={handleSubmit} >add_circle</Icon>
+            {/* <input onClick={handleSubmit} type="submit" value="Submit"></input> */}
             </form> 
 
-            <Icon>add_circle</Icon>
+            
 
     </Card>
 

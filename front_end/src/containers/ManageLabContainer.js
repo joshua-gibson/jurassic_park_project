@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PageTitleBar from '../components/PageTitleBar'
-import PaddockFilterForm from '../components/PaddockFilterForm'
 import LabCardList from '../components/LabCardList'
 import '../style/ManagePaddockContainer.css';
 
@@ -11,8 +10,15 @@ class ManageLabContainer extends Component {
         this.state = {
             title: "Dinosaur Lab",
             dinosaurs: [],
-            paddocks: []
+            paddocks: [],
+            newName: null,
+            newPaddock: null,
+            newSpecies: null
         };
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.setNewName = this.setNewName.bind(this);
+        this.setNewPaddock = this.setNewPaddock.bind(this);
+        this.setNewSpecies = this.setNewSpecies.bind(this);
     }
 
     componentDidMount() {
@@ -32,11 +38,51 @@ class ManageLabContainer extends Component {
         .catch(err => console.error);
     }
 
+    handleSubmit(){
+        // event.preventDefault();
+          const subData =   {
+            "name": `${this.state.newName}`,
+            "paddock": `http://localhost:8080/paddocks/${this.state.newPaddock}`,
+            "species": `http://localhost:8080/species/${this.state.newSpecies}`
+          };
+    
+          fetch('http://localhost:8080/dinosaurs', {
+           method: 'POST',
+           body: JSON.stringify(subData),
+           headers: {'Content-Type': 'application/json'}
+          })
+          .catch(err => console.error);
+      }
+
+      setNewName(evt){
+          const name = evt.target.value
+        this.setState({newName: name});
+      }
+
+      setNewPaddock(evt){
+        const paddock = evt.target.value
+        this.setState({newPaddock: paddock});
+      }
+
+     async setNewSpecies(species){
+
+        try {
+            let newSpec = await this.setState({newSpecies: species});
+            this.handleSubmit();
+            console.log(newSpec);
+          } catch(error) {
+            console.error(error);
+          }
+          
+        // this.setState({newSpecies: species});
+        // this.handleSubmit();
+      }
+
     render() {
         return (
             <div className="container">
                 <PageTitleBar className="title" title={this.state.title}/>
-                <LabCardList dinosaurs={this.state.dinosaurs} paddocks={this.state.paddocks}/>
+                <LabCardList hs={this.handleSubmit} snn = {this.setNewName} snp = {this.setNewPaddock} sns = {this.setNewSpecies} dinosaurs={this.state.dinosaurs} paddocks={this.state.paddocks}/>
 
             </div>
         )
