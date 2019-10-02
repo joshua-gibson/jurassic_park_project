@@ -15,7 +15,7 @@ class ManagePaddockContainer extends Component {
 
     componentDidMount() {
         const url = "http://localhost:8080/parks/paddocks";
-        
+
         fetch(url)
             .then(res => res.json())
             .then(paddocks => this.setState({
@@ -30,6 +30,10 @@ class ManagePaddockContainer extends Component {
                 <PageTitleBar className="title" title={this.state.title}/>
                 <h1>Manage Paddock Container</h1>
                 <PaddockCardList paddocks={this.state.paddocks}/>
+
+
+
+
             </div>
         )
     }
