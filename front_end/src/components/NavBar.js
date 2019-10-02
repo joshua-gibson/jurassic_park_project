@@ -13,6 +13,9 @@ const NavBar = (props) => {
           <Link to="/">Park Management</Link>
       </li>
       <li className="navbaritem">
+          <Link to="/lab">Dinosaur Lab</Link>
+      </li>
+      <li className="navbaritem">
           <Link to="/dinos">Manage Dinosaurs</Link>
       </li>
       {/* <li className="navbaritem">

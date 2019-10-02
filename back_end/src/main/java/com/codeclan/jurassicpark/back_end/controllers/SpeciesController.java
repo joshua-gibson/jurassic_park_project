@@ -22,6 +22,10 @@ public class SpeciesController {
     @Autowired
     SpeciesRepository speciesRepository;
 
+    @GetMapping(value = "")
+    public List<Species> getAllSpecies(){
+        return speciesRepository.findAll();
+    }
 
     @GetMapping(value = "/diet/{diet_type}")
     public List<Species> getSpeciesWithDietType(@PathVariable String diet_type){

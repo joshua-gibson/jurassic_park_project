@@ -38,4 +38,11 @@ public class DinosaurController {
         return dinosaurRepository.findDinosaursByDietType(DietType.valueOf(diet_type));
     }
 
+
+    @GetMapping(path = "/tidy")
+    public List<Dinosaur> getAllDinosaurs(){
+        return dinosaurRepository.findAll();
+    }
+
+
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import Dennis from './Dennis.js';
 
 const PaddockCardList = (props) => {
 
@@ -9,8 +10,9 @@ const PaddockCardList = (props) => {
 
     return (
     <>
-    <h3>Paddock List</h3>
-    {paddocks}
+        <h3>Paddock List</h3>
+        {paddocks}
+        <Dennis/>
     </>
     );
 

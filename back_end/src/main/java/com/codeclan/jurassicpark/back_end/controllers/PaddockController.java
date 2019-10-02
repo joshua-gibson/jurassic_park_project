@@ -19,8 +19,9 @@ public class PaddockController {
     @Autowired
     PaddockRepository paddockRepository;
 
-    @GetMapping(value="/addPaddock")
-    public void addNewPaddock(){
+    @GetMapping(path = "/tidy")
+    public List<Paddock> getAllPaddocks(){
+        return paddockRepository.findAll();
     }
 
 

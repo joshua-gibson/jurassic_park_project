@@ -1,17 +1,12 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Icon from '@material-ui/core/Icon';
 
 
@@ -22,21 +17,9 @@ const useStyles = makeStyles(theme => ({
     margin: "20px"
   },
   media: {
-    // height: 0,
-    // paddingTop: '56.25%', // 16:9
     height: '276px',
     width: '100%',
     objectFit: 'contain'
-  },
-  expand: {
-    transform: 'rotate(0deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-  },
-  expandOpen: {
-    transform: 'rotate(180deg)',
   },
   avatar: {
     backgroundColor: red[500],
@@ -53,14 +36,14 @@ const useStyles = makeStyles(theme => ({
       },
     }));
 
-export default function DinosaurCard(props) {
+
+
+export default function LabCard(props) {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
 
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+  const paddockoptions = props.paddocks.map((paddock, index) => {
+    return <option value="{paddock.name}">{paddock.name}</option>
+  })
 
   return (
     <Card className={classes.card}>
@@ -84,29 +67,20 @@ export default function DinosaurCard(props) {
 </Typography>
     </CardContent>
     <div className={classes.root}>
-      <Icon>add_circle</Icon>
+      
     </div>
-    <CardActions disableSpacing>
-      <IconButton
-           className={clsx(classes.expand, {
-             [classes.expandOpen]: expanded,
-           })}
-           onClick={handleExpandClick}
-           aria-expanded={expanded}
-           aria-label="show more"
-         >
-           <ExpandMoreIcon />
-         </IconButton>
-       </CardActions>
-       <Collapse in={expanded} timeout="auto" unmountOnExit>
-         <CardContent>
-           <Typography paragraph>Facts:</Typography>
-           <Typography paragraph>
-            {props.facts}
-          </Typography>
 
-        </CardContent>
-      </Collapse>
+            <form>
+                <label>Name: </label>
+            <input type="text" name="name"/> <br/>
+            <label>Name: </label>
+            <select>
+                {paddockoptions}
+            </select> 
+            </form> 
+
+            <Icon>add_circle</Icon>
+
     </Card>
 
   );
