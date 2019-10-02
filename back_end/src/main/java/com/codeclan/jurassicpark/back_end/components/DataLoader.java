@@ -65,7 +65,7 @@ public class DataLoader implements ApplicationRunner {
                 "Indosuchus",
                 DietType.CARNIVORE,
                 7.0,
-                "Indosuchus had a flattened crest on its skull.",
+                "Indosuchus had a flattened crest on its skull. Indosuchus is a genus of abelisaurid dinosaur from the Late Cretaceous Period (70 to 66 million years ago – the Maastrichtian), a theropod related to Abelisaurus.",
                 "http://images.dinosaurpictures.org/Indosuchus_7076.jpg"));
         speciesRepository.save(new Species(
                 "Apatosaurus",
@@ -95,7 +95,7 @@ public class DataLoader implements ApplicationRunner {
                 "Utahraptor",
                 DietType.CARNIVORE,
                 6.0,
-                "Found in the USA, Utahraptor resembled velociraptor but much larger, prompting Robert T. Bakker to pronounce it 'Spielberg's raptor' due to the velociraptors in the movie <em>Jurassic Park</em> being portrayed much larger than their historical counterparts.",
+                "Found in the USA, Utahraptor resembled velociraptor but much larger. In 2018, it was proposed that Utahraptor be the Utah state dinosaur, an act that was approved by the Senate.",
                 "http://images.dinosaurpictures.org/Utahraptor-M.Shiraishi_c5cc.jpg"));
         speciesRepository.save(new Species(
                 "Compsognathus",
