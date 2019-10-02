@@ -14,6 +14,7 @@ class ParkMgmtContainer extends Component {
             title: "Park Management",
             lockdown: false,
             paddocks: []
+
         };
         this.handleLockdown = this.handleLockdown.bind(this);
     }
@@ -34,6 +35,8 @@ class ParkMgmtContainer extends Component {
         this.setState({lockdown: ld});
     }
 
+    
+
     render() {
         return (
             <div className="container">
@@ -41,7 +44,7 @@ class ParkMgmtContainer extends Component {
                 <ParkMap onPaddockSelect={this.props.onPaddockSelect} 
                     lockdown={this.state.lockdown} 
                     paddocks={this.state.paddocks}/>
-                <AddPaddockForm/>
+                <AddPaddockForm />
                 <LockdownButton onChange={this.handleLockdown}/>
             </div>
         )

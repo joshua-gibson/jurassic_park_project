@@ -5,15 +5,14 @@ class AddPaddockForm extends Component {
     super(props);
     this.state = {
       dinosaurCapacity: 0,
-      name: null,
-      visitorCapacity: 0,
-      parkId: 1
+      name: "",
+      visitorCapacity: 0
     }
     this.handleDinoCapChange = this.handleDinoCapChange.bind(this);
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleVisitorCapChange = this.handleVisitorCapChange.bind(this);
-    this.handleParkChange = this.handleParkChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.handlePaddockSubmit = this.handlePaddockSubmit.bind(this);
   }
 
   handleDinoCapChange(e){
@@ -31,11 +30,24 @@ class AddPaddockForm extends Component {
       visitorCapacity: e.target.value
     });
   }
-  handleParkChange(e){
-    this.setState({
-      parkId: e.target.value
-    });
-  }
+
+  handlePaddockSubmit(){
+    const paddockData = {
+        "name": `${this.state.name}`,
+        "visitorCapcity": `${this.state.visitorCapacity}`,
+        "dinosaurCapacity": `${this.state.dinosaurCapacity}`,
+        "park": `http://localhost:8080/park/1`
+    };
+    console.log(paddockData);
+    
+
+    fetch('http://localhost:8080/paddocks', {
+        method: 'POST',
+        body: JSON.stringify(paddockData),
+        headers: {'Content-Type': 'application/json'}
+    })
+    .catch(err => console.error);
+}
 
   handleFormSubmit(e){
     e.preventDefault();
@@ -45,14 +57,16 @@ class AddPaddockForm extends Component {
       visitorCapacity: this.state.visitorCapacity,
       parkId: this.state.parkId
     };
-    this.props.handlePaddockSubmit(newPaddock);
+    this.handlePaddockSubmit(newPaddock);
     this.setState({
       dinosaurCapacity: 0,
-      name: null,
+      name: "",
       visitorCapacity: 0,
       parkId: 1
     });
   }
+
+  
 
   
   render (){
@@ -77,12 +91,6 @@ class AddPaddockForm extends Component {
                 value={this.state.visitorCapacity} 
                 type="number"
                 onChange={this.handleVisitorCapChange}>
-            </input>
-         <label htmlFor="parkId">Park id: </label>
-            <input id="parkId" 
-                value={this.state.parkId} 
-                type="number"
-                onChange={this.handleParkChange}>
             </input>
             <input type="submit"/>
        </form>
