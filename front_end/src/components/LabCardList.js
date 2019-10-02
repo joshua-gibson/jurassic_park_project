@@ -13,6 +13,9 @@ const LabCardList = (props) => {
         image={dinosaur.url} 
         content={dinosaur.info}
         paddocks={props.paddocks}
+        hs={props.hs}
+        snn={props.snn}
+        snp={props.snp}
         />
 
     })

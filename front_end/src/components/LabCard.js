@@ -42,30 +42,10 @@ export default function LabCard(props) {
   const classes = useStyles();
 
   const paddockoptions = props.paddocks.map((paddock, index) => {
-    return <option key={index} value="{paddock.name}">{paddock.name}</option>
+    return <option key={index} value={paddock.name}>{paddock.name}</option>
   })
 
-  function handleSubmit(event){
-    event.preventDefault();
-      
-      const subData =   {
-        "name": "Hillbilly2",
-        "paddock": "http://localhost:8080/paddocks/1",
-        "species": "http://localhost:8080/species/1"
-      };
 
-      // console.log(subData);
-
-      fetch('http://localhost:8080/dinosaurs', {
-       method: 'POST',
-       body: JSON.stringify(subData),
-       headers: {'Content-Type': 'application/json'}
-      })
-      .catch(err => console.error);
-
-      console.log(subData);
-
-  }
 
   return (
     <Card className={classes.card}>
@@ -94,13 +74,14 @@ export default function LabCard(props) {
 
             <form>
                 <label>Name: </label>
-            <input type="text" name="name"/> <br/>
+            <input onChange={props.snn} type="text" name="name"/> <br/>
             <label>Name: </label>
-            <select>
+            <select onChange={props.snp}>
+            <option key="99" value="None">None</option>
                 {paddockoptions}
             </select> 
             <br/>
-            <Icon onClick={handleSubmit} >add_circle</Icon>
+            <Icon onClick={props.hs} >add_circle</Icon>
             {/* <input onClick={handleSubmit} type="submit" value="Submit"></input> */}
             </form> 
 

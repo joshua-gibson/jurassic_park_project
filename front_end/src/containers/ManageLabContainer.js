@@ -10,8 +10,13 @@ class ManageLabContainer extends Component {
         this.state = {
             title: "Dinosaur Lab",
             dinosaurs: [],
-            paddocks: []
+            paddocks: [],
+            newName: null,
+            newPaddock: null
         };
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.setNewName = this.setNewName.bind(this);
+        this.setNewPaddock = this.setNewPaddock.bind(this);
     }
 
     componentDidMount() {
@@ -31,11 +36,38 @@ class ManageLabContainer extends Component {
         .catch(err => console.error);
     }
 
+    handleSubmit(event){
+        event.preventDefault();
+          
+          const subData =   {
+            "name": "Hillbilly2",
+            "paddock": "http://localhost:8080/paddocks/1",
+            "species": "http://localhost:8080/species/1"
+          };
+    
+          fetch('http://localhost:8080/dinosaurs', {
+           method: 'POST',
+           body: JSON.stringify(subData),
+           headers: {'Content-Type': 'application/json'}
+          })
+          .catch(err => console.error);
+      }
+
+      setNewName(evt){
+          const name = evt.target.value
+        this.setState({newName: name});
+      }
+
+      setNewPaddock(evt){
+        const paddock = evt.target.value
+        this.setState({newPaddock: paddock});
+      }
+
     render() {
         return (
             <div className="container">
                 <PageTitleBar className="title" title={this.state.title}/>
-                <LabCardList dinosaurs={this.state.dinosaurs} paddocks={this.state.paddocks}/>
+                <LabCardList hs={this.handleSubmit} snn = {this.setNewName} snp = {this.setNewPaddock} dinosaurs={this.state.dinosaurs} paddocks={this.state.paddocks}/>
 
             </div>
         )
