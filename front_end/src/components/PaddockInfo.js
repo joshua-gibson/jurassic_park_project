@@ -2,6 +2,9 @@ import React from 'react';
 
 const PaddockInfo = (props) => {
 
+    // const dinoNode = props.paddocks._links.dinosaurs.map((dinosaur, index) =>{
+    //     dinosaur.name
+    // })
 
     if (!props.paddock) return null;
     return (
@@ -10,7 +13,9 @@ const PaddockInfo = (props) => {
     <p>Paddock Name: {props.paddock.name}</p>
     <p>Visitor Capacity: {props.paddock.visitorCapacity}</p>
     <p>Dinosaur Capacity: {props.paddock.dinosaurCapacity}</p>
-    <p>{props.paddock._links.dinosaurs}</p>
+
+    <button> <a href="http://localhost:3000/dinos">Dinosaurs</a></button>
+
     </>
     );
 
