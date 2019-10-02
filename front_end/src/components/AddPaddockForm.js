@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import '../style/form.css';
 
 class AddPaddockForm extends Component {
   constructor(props){
@@ -39,7 +40,7 @@ class AddPaddockForm extends Component {
         "park": `http://localhost:8080/park/1`
     };
     console.log(paddockData);
-    
+
 
     fetch('http://localhost:8080/paddocks', {
         method: 'POST',
@@ -66,29 +67,29 @@ class AddPaddockForm extends Component {
     });
   }
 
-  
 
-  
+
+
   render (){
     return (
-    <div>
+    <div className="paddockForm">
        <h1>Create New Paddock</h1>
        <form onSubmit={this.handleFormSubmit}>
          <label htmlFor="dinosaurCapacity">Dinosaur Capacity: </label>
-            <input id="dinosaurCapacity" 
-                value={this.state.dinosaurCapacity} 
+            <input id="dinosaurCapacity"
+                value={this.state.dinosaurCapacity}
                 type="number"
                 onChange={this.handleDinoCapChange}>
             </input>
          <label htmlFor="name">Paddock name: </label>
-            <input id="name" 
-                value={this.state.name} 
+            <input id="name"
+                value={this.state.name}
                 type="text"
                 onChange={this.handleNameChange}>
             </input>
          <label htmlFor="visitorCapacity">Visitor Capacity: </label>
-            <input id="visitorCapacity" 
-                value={this.state.visitorCapacity} 
+            <input id="visitorCapacity"
+                value={this.state.visitorCapacity}
                 type="number"
                 onChange={this.handleVisitorCapChange}>
             </input>

@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const PaddockFilterForm = (props) => {
 
   const paddockoptions = props.paddocks.map((paddock, index) => {
@@ -20,8 +21,8 @@ const PaddockFilterForm = (props) => {
           <select onChange={onSelect}>
           <option key="99" value="99">All</option>
             {paddockoptions}
-          </select> 
-        </form> 
+          </select>
+        </form>
     </>
   );
 
