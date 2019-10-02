@@ -84,29 +84,10 @@ export default function DinosaurCard(props) {
 </Typography>
     </CardContent>
     <div className={classes.root}>
-      <Icon>add_circle</Icon>
+      {/* <Icon>add_circle</Icon> */}
     </div>
-    <CardActions disableSpacing>
-      <IconButton
-           className={clsx(classes.expand, {
-             [classes.expandOpen]: expanded,
-           })}
-           onClick={handleExpandClick}
-           aria-expanded={expanded}
-           aria-label="show more"
-         >
-           <ExpandMoreIcon />
-         </IconButton>
-       </CardActions>
-       <Collapse in={expanded} timeout="auto" unmountOnExit>
-         <CardContent>
-           <Typography paragraph>Facts:</Typography>
-           <Typography paragraph>
-            {props.facts}
-          </Typography>
 
-        </CardContent>
-      </Collapse>
+    {/* <h3>add new stuff here</h3> */}
     </Card>
 
   );

@@ -64,9 +64,18 @@ class ManageLabContainer extends Component {
         this.setState({newPaddock: paddock});
       }
 
-      setNewSpecies(species){
-        this.setState({newSpecies: species});
-        this.handleSubmit();
+     async setNewSpecies(species){
+
+        try {
+            let newSpec = await this.setState({newSpecies: species});
+            this.handleSubmit();
+            console.log(newSpec);
+          } catch(error) {
+            console.error(error);
+          }
+          
+        // this.setState({newSpecies: species});
+        // this.handleSubmit();
       }
 
     render() {
