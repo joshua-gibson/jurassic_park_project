@@ -16,7 +16,7 @@ class ManagePaddockContainer extends Component {
     componentDidMount() {
         const id = this.props.match.params.id;
         const url = `http://localhost:8080/paddocks/${id}`;
-        
+
         fetch(url)
             .then(res => res.json())
             .then(paddock => this.setState({
@@ -31,6 +31,7 @@ class ManagePaddockContainer extends Component {
                 <PageTitleBar className="title" title={this.state.title}/>
                 <h1>Manage Paddock Container</h1>
                 <PaddockInfo paddock={this.state.paddock}/>
+                <button type="feed">Feed</button>
             </div>
         )
     }
