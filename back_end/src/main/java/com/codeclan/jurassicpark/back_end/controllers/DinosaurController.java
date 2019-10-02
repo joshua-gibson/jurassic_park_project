@@ -38,4 +38,16 @@ public class DinosaurController {
         return dinosaurRepository.findDinosaursByDietType(DietType.valueOf(diet_type));
     }
 
+
+    @GetMapping(value = "")
+    public List<Dinosaur> getAllDinosaurs(){
+        return dinosaurRepository.findAll();
+    }
+
+    @PostMapping(path = "/add", consumes = "application/json", produces = "application/json")
+    public void addMember(@RequestBody Dinosaur newDino) {
+        dinosaurRepository.save(newDino);
+    }
+
+
 }
