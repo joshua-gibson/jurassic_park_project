@@ -30,6 +30,10 @@ class ManagePaddockContainer extends Component {
                 <PageTitleBar className="title" title={this.state.title}/>
                 <h1>Manage Paddock Container</h1>
                 <PaddockCardList paddocks={this.state.paddocks}/>
+
+
+
+
             </div>
         )
     }

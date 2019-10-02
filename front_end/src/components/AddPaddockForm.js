@@ -72,7 +72,7 @@ class AddPaddockForm extends Component {
   render (){
     return (
     <div>
-       <h1>Create Paddock</h1>
+       <h1>Create New Paddock</h1>
        <form onSubmit={this.handleFormSubmit}>
          <label htmlFor="dinosaurCapacity">Dinosaur Capacity: </label>
             <input id="dinosaurCapacity" 
