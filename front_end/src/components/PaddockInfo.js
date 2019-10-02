@@ -14,7 +14,7 @@ const PaddockInfo = (props) => {
     <p>Visitor Capacity: {props.paddock.visitorCapacity}</p>
     <p>Dinosaur Capacity: {props.paddock.dinosaurCapacity}</p>
 
-    <button> <a href="http://localhost:3000/dinos">Dinosaurs</a></button>
+    <button className="buttons"> <a href="http://localhost:3000/dinos">Dinosaurs</a></button>
 
     </>
     );

@@ -28,10 +28,9 @@ class ManagePaddockContainer extends Component {
     render() {
         return (
             <div className="container">
-                <PageTitleBar className="title" title={this.state.title}/>
-                <h1>Manage Paddock Container</h1>
+
                 <PaddockInfo paddock={this.state.paddock}/>
-                <button type="feed">Feed</button>
+                <button className="buttons" type="feed">Feed</button>
             </div>
         )
     }
