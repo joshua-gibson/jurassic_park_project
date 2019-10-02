@@ -56,8 +56,8 @@ public class DataLoader implements ApplicationRunner {
         Paddock paddock7 = new Paddock("Grassy Knoll", 30, 4, jurassicPark);
         paddockRepository.save(paddock7);
 
-        Paddock paddock8 = new Paddock("Nublar", 20, 4, jurassicPark);
-        paddockRepository.save(paddock8);
+//        Paddock paddock8 = new Paddock("Nublar", 20, 4, jurassicPark);
+//        paddockRepository.save(paddock8);
 
 
 
@@ -234,10 +234,10 @@ public class DataLoader implements ApplicationRunner {
         Dinosaur carn8 = new Dinosaur("Henry", paddock7, speciesRepository.findSpeciesByType("Utahraptor"));
         dinosaurRepository.save(carn8);
 
-        Dinosaur carn9 = new Dinosaur("Angus", paddock8, speciesRepository.findSpeciesByType("Tyrannosaurus"));
-        dinosaurRepository.save(carn9);
-        Dinosaur carn10 = new Dinosaur("Jolie", paddock8, speciesRepository.findSpeciesByType("Tyrannosaurus"));
-        dinosaurRepository.save(carn10);
+//        Dinosaur carn9 = new Dinosaur("Angus", paddock8, speciesRepository.findSpeciesByType("Tyrannosaurus"));
+//        dinosaurRepository.save(carn9);
+//        Dinosaur carn10 = new Dinosaur("Jolie", paddock8, speciesRepository.findSpeciesByType("Tyrannosaurus"));
+//        dinosaurRepository.save(carn10);
 
     }
 }

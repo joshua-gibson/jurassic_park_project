@@ -4,7 +4,7 @@ import Dennis from './Dennis.js';
 const PaddockCardList = (props) => {
 
     const paddocks = props.paddocks.map((paddock, index) => {
-        return <p key={index}>{paddock.name}</p>
+        return <a href={`http://localhost:3000/paddocks/${paddock.id}`} key={index}>{paddock.name}</a>
     })
 
 

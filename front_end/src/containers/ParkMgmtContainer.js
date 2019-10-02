@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PageTitleBar from '../components/PageTitleBar'
 import ParkMap from '../components/ParkMap'
-import AddVisitorForm from '../components/AddVisitorForm'
+import AddPaddockForm from '../components/AddPaddockForm'
 import LockdownButton from '../components/LockdownButton'
 import '../style/ParkMgmtContainer.css';
 
@@ -38,8 +38,10 @@ class ParkMgmtContainer extends Component {
         return (
             <div className="container">
                 <PageTitleBar className="title" title={this.state.title}/>
-                <ParkMap lockdown={this.state.lockdown} paddocks={this.state.paddocks}/>
-                <AddVisitorForm/>
+                <ParkMap onPaddockSelect={this.props.onPaddockSelect} 
+                    lockdown={this.state.lockdown} 
+                    paddocks={this.state.paddocks}/>
+                <AddPaddockForm/>
                 <LockdownButton onChange={this.handleLockdown}/>
             </div>
         )
