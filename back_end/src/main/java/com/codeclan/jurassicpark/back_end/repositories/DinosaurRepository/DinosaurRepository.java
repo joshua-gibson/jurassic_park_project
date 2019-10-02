@@ -17,5 +17,4 @@ public interface DinosaurRepository extends JpaRepository <Dinosaur, Long>, Dino
     List<Dinosaur> findDinosaursByDietType(DietType dietType);
 
 
-
 }
