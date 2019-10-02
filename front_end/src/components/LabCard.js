@@ -48,11 +48,8 @@ export default function LabCard(props) {
   function handleSubmit(){
 
     props.sns(props.species);
-    props.hs();
-
+    // props.hs();
   }
-
-
 
   return (
     <Card className={classes.card}>

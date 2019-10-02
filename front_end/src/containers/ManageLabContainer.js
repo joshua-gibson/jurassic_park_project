@@ -43,7 +43,7 @@ class ManageLabContainer extends Component {
           const subData =   {
             "name": `${this.state.newName}`,
             "paddock": `http://localhost:8080/paddocks/${this.state.newPaddock}`,
-            "species": `http://localhost:8080/species/1${this.state.newSpecies}`
+            "species": `http://localhost:8080/species/${this.state.newSpecies}`
           };
     
           fetch('http://localhost:8080/dinosaurs', {
@@ -66,6 +66,7 @@ class ManageLabContainer extends Component {
 
       setNewSpecies(species){
         this.setState({newSpecies: species});
+        this.handleSubmit();
       }
 
     render() {
